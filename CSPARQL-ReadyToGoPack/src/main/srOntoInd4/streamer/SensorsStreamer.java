@@ -1,4 +1,4 @@
-package eu.larkc.csparql.sr4ld2014.streamer;
+package srOntoInd4.streamer;
 
 import java.io.File;
 import java.sql.Timestamp;
