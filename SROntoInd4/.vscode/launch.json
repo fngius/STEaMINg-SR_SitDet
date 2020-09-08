@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Example",
+            "request": "launch",
+            "mainClass": "srOntoInd4.Example",
+            "projectName": "CSPARQL-ReadyToGoPack"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Example",
+            "request": "launch",
+            "mainClass": "srOntoInd4.Example",
+            "projectName": "SROntoInd4"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Example",
+            "request": "launch",
+            "mainClass": "Example",
+            "projectName": "SROntoInd4"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Example<CSPARQL-ReadyToGoPack>",
+            "request": "launch",
+            "mainClass": "Example",
+            "projectName": "SROntoInd4"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SR4LD2014_Ex1_rsp<CSPARQL-ReadyToGoPack>",
+            "request": "launch",
+            "mainClass": "eu.larkc.csparql.sr4ld2014.SR4LD2014_Ex1_rsp",
+            "projectName": "SROntoInd4"
+        }
+    ]
+}

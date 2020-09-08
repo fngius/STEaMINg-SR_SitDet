@@ -9,11 +9,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>main</groupId>
-	<artifactId>CSPARQL-ReadyToGoPack</artifactId>
+	<artifactId>SROntoInd4</artifactId>
 	<version>0.9.6</version>
 	<packaging>pom</packaging>
 
-	<name>csparql-readytogopack</name>
+	<name>SROntoInd4</name>
 
 	<url>http://streamreasoning.org</url>
 
