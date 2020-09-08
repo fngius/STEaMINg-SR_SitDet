@@ -61,7 +61,6 @@ import eu.larkc.csparql.core.engine.CsparqlQueryResultProxy;
 import eu.larkc.csparql.core.engine.RDFStreamFormatter;
 import srOntoInd4.ConsoleFormatter;
 import srOntoInd4.streamer.SensorsStreamer;
-import srOntoInd4.streamer.SensorsStreamer1;
 
 public class Example {
 
@@ -83,7 +82,12 @@ public class Example {
 
 			// put static model
 			//engine.putStaticNamedModel("http://streamreasoning.org/larkc/csparql/LBSMA-static-k.rdf", "http://streamreasoning.org/larkc/csparql/LBSMA-static-k.rdf");
-			engine.putStaticNamedModel("http://streamreasoning.org/roomConnection",CsparqlUtils.serializeRDFFile("/home/franco/Repositories/SR-OntoInd4/CSPARQL-ReadyToGoPack/examples_files/ex.rdf"));
+			//engine.putStaticNamedModel("http://streamreasoning.org/roomConnection",CsparqlUtils.serializeRDFFile("/home/franco/Repositories/SR-OntoInd4/SROntoInd4/examples_files/ex.rdf"));
+
+			engine.putStaticNamedModel("http://streamreasoning.org/roomConne",CsparqlUtils.serializeRDFFile("/home/franco/Repositories/OntoInd4/NEWONTOLOGY.owl"));
+
+			//String fileOntology = "/home/franco/Repositories/OntoInd4/test.owl";
+			String fileOntology = "/home/franco/Repositories/OntoInd4/NEWONTOLOGY.owl";
 
 			/*
 			final String queryBody = "REGISTER QUERY reasoning AS "
@@ -114,66 +118,62 @@ public class Example {
 			 */
 
 			String queryBody = "REGISTER QUERY reasoning AS "
-					+ "PREFIX :<http://onto#> "
-					+ "PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#> "
-					//+ "CONSTRUCT { ?s :isIn ?p } "
-					+ "SELECT ?o1 ?o2 "
-					+ "FROM STREAM <se sorTM2> [RANGE 5s TUMBLING] "
-					+ "FROM STREAM <sensorTM1> [RANGE 5s TUMBLING] "
-					+ "WHERE { "
-					+ "{ :sensorTM1 :madeObservation ?o1 ." // ?s instead of :sensorTM1 for both cases
-					+ " ?o1 :hasSimpleResult ?p . ?o1 :hasTime ?r ."
-					//+ " ?o1 :hasTime ?r . "
-					+ " ?s1 :madeObservation ?o2 ."
-					+ " ?o2 :hasSimpleResult ?p1 ."
-					+ " ?o2 :hasTime ?r1 ."
-					+ "FILTER (f:timestamp(:sensorTM1,:madeObservation,?o1) < f:timestamp(?s1,:madeObservation,?o2)"
-					+ " && ?p > 1 && ?p1 > 1 && ?s1 != :sensorTM1 ). }"
-					+ "} ";
-
-			String queryBody1 = "REGISTER QUERY reasoning AS "
 					+ "PREFIX : <http://onto#> "
+					+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 					+ "PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#> "
 					//+ "CONSTRUCT { [] a :situationCODE1234 ; :hasObservation ?o1 ; :hasObservation ?o2 . } "
-					+ "SELECT ?o1 "
-					//+ "FROM STREAM <sensorTM2> [RANGE 5s TUMBLING] "
-					+ "FROM STREAM <sensorTM1> [RANGE 5s TUMBLING] "
+					+ "SELECT ?o1 ?o2 ?o3 ?m ?pl "
+					+ "FROM STREAM <Stream_C_Wtemp> [RANGE 10s TUMBLING] "
+					+ "FROM STREAM <Stream_TG_temp> [RANGE 10s TUMBLING] "
+					+ "FROM STREAM <Stream_G_temp>  [RANGE 10s TUMBLING] "
+					+ "FROM <http://streamreasoning.org/roomConne> "
 					+ "WHERE { "
-					+ "{ ?s :madeObservation ?o1 ." // ?s instead of :sensorTM1 for both cases
-					+ " ?o1 :hasSimpleResult ?p ."
-					+ " ?o1 :hasTime ?r ."
-					//+ " ?o1 :hasTime ?r . "
-					//+ " ?s1 :madeObservation ?o2 ."
-					//+ " ?o2 :hasSimpleResult ?p1 ."
-					//+ " ?o2 :hasTime ?r1 ."
+					+ "{ ?m         :isPartOf        ?pl ."
+					+ "  ?m         sosa:hosts       sosa:S_C_Wtemp ." 
+					+	"  :S_C_Wtemp :madeObservation ?o1 ."
+					+ "  ?o1        :hasSimpleResult ?p1 ."
+					+ "  ?m        sosa:hosts       sosa:S_TG_temp ."
+					+ "  :S_TG_temp :madeObservation ?o2 ."
+					+ "  ?o2        :hasSimpleResult ?p2 ."
+					+ "  ?m        sosa:hosts       sosa:S_G_temp ."
+					+ "  :S_G_temp  :madeObservation ?o3 ."
+					+ "  ?o3        :hasSimpleResult ?p3 ."
 					+ "FILTER ("
 					//+ "f:timestamp(:sensorTM1,:madeObservation,?o1) < f:timestamp(?s1,:madeObservation,?o2)"
 					//+ " && "
-					+ "?p > 1.0 ). }"
+					+ "?p1 > 1.0  && ?p2 > 1.0 && ?p3 > 1.0 ). }"
 					+ "} ";
 
 			OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 			OWLDataFactory factory = manager.getOWLDataFactory();
 			String ontologyURI = "http://onto";
 			String ns = ontologyURI + "#";
-			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File("/home/franco/Repositories/OntoInd4/test.owl"));
-
-			SensorsStreamer1 streamSTM1 = new SensorsStreamer1("sensorTM1",ns,1000L,ontology,factory);
+			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(fileOntology));
+			
+			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_C_Wtemp",ns,"C_Wtemp",2,ontology,factory);
+			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_TG_temp",ns,"TG_temp",2,ontology,factory);
+			SensorsStreamer Stream_G_temp = new SensorsStreamer("Stream_G_temp",ns,"G_temp",2,ontology,factory);
 
 			//Register new streams in the engine
-			engine.registerStream(streamSTM1);
+			engine.registerStream(Stream_C_Wtemp);
+			engine.registerStream(Stream_TG_temp);
+			engine.registerStream(Stream_G_temp);
 
-			Thread streamSTM1Thread = new Thread(streamSTM1);
+			Thread Stream_C_Wtemp_Thread = new Thread(Stream_C_Wtemp);
+			Thread Stream_TG_temp_Thread = new Thread(Stream_TG_temp);
+			Thread Stream_G_temp_Thread = new Thread(Stream_G_temp);
 
 			//Register new query in the engine
-			CsparqlQueryResultProxy c1 = engine.registerQuery(queryBody1, false);
+			CsparqlQueryResultProxy c = engine.registerQuery(queryBody, false);
 
 			//Attach a result consumer to the query result proxy to print the results on the console
-			c1.addObserver(new ConsoleFormatter());	
+			c.addObserver(new ConsoleFormatter());	
 
 
 			//Start streaming data
-			streamSTM1Thread.start();
+			Stream_C_Wtemp_Thread.start();
+			Stream_TG_temp_Thread.start();
+			Stream_G_temp_Thread.start();
 
 			//engine.updateReasoner(c.getSparqlQueryId(), 
 			//CsparqlUtils.fileToString("examples_files/rdfs.rules"), 

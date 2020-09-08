@@ -15,8 +15,15 @@
             "type": "java",
             "name": "CodeLens (Launch) - Example",
             "request": "launch",
+            "mainClass": "srOntoInd4.Example",
+            "projectName": "SROntoInd4"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Example",
+            "request": "launch",
             "mainClass": "Example",
-            "projectName": "CSPARQL-ReadyToGoPack"
+            "projectName": "SROntoInd4"
         },
         {
             "type": "java",
@@ -29,14 +36,14 @@
             "name": "Debug (Launch)-Example<CSPARQL-ReadyToGoPack>",
             "request": "launch",
             "mainClass": "Example",
-            "projectName": "CSPARQL-ReadyToGoPack"
+            "projectName": "SROntoInd4"
         },
         {
             "type": "java",
             "name": "Debug (Launch)-SR4LD2014_Ex1_rsp<CSPARQL-ReadyToGoPack>",
             "request": "launch",
             "mainClass": "eu.larkc.csparql.sr4ld2014.SR4LD2014_Ex1_rsp",
-            "projectName": "CSPARQL-ReadyToGoPack"
+            "projectName": "SROntoInd4"
         }
     ]
 }
