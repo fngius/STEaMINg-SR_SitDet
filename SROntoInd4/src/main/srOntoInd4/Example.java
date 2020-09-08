@@ -117,7 +117,34 @@ public class Example {
 					+ " } ";
 			 */
 
-			String queryBody = "REGISTER QUERY reasoning AS "
+			String queryS6 = "REGISTER QUERY reasoning AS "
+					+ "PREFIX : <http://onto#> "
+					+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
+					+ "PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#> "
+					//+ "CONSTRUCT { [] a :situationCODE1234 ; :hasObservation ?o1 ; :hasObservation ?o2 . } "
+					+ "SELECT ?o1 ?o2 ?o3 ?m ?pl "
+					+ "FROM STREAM <Stream_C_Wtemp> [RANGE 10s TUMBLING] "
+					+ "FROM STREAM <Stream_TG_temp> [RANGE 10s TUMBLING] "
+					+ "FROM STREAM <Stream_G_temp>  [RANGE 10s TUMBLING] "
+					+ "FROM <http://streamreasoning.org/roomConne> "
+					+ "WHERE { "
+					+ "{ ?m         :isPartOf        ?pl ."
+					+ "  ?m         sosa:hosts       sosa:S_C_Wtemp ." 
+					+	"  :S_C_Wtemp :madeObservation ?o1 ."
+					+ "  ?o1        :hasSimpleResult ?p1 ."
+					+ "  ?m        sosa:hosts       sosa:S_TG_temp ."
+					+ "  :S_TG_temp :madeObservation ?o2 ."
+					+ "  ?o2        :hasSimpleResult ?p2 ."
+					+ "  ?m        sosa:hosts       sosa:S_G_temp ."
+					+ "  :S_G_temp  :madeObservation ?o3 ."
+					+ "  ?o3        :hasSimpleResult ?p3 ."
+					+ "FILTER ("
+					//+ "f:timestamp(:sensorTM1,:madeObservation,?o1) < f:timestamp(?s1,:madeObservation,?o2)"
+					//+ " && "
+					+ "?p1 > 1.0  && ?p2 > 1.0 && ?p3 > 1.0 ). }"
+					+ "} ";
+
+					String queryS7 = "REGISTER QUERY reasoning AS "
 					+ "PREFIX : <http://onto#> "
 					+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 					+ "PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#> "
@@ -150,9 +177,9 @@ public class Example {
 			String ns = ontologyURI + "#";
 			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(fileOntology));
 			
-			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_C_Wtemp",ns,"C_Wtemp",2,ontology,factory);
-			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_TG_temp",ns,"TG_temp",2,ontology,factory);
-			SensorsStreamer Stream_G_temp = new SensorsStreamer("Stream_G_temp",ns,"G_temp",2,ontology,factory);
+			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_C_Wtemp",ns,"C_Wtemp",9,ontology,factory);
+			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_TG_temp",ns,"TG_temp",9,ontology,factory);
+			SensorsStreamer Stream_G_temp = new SensorsStreamer("Stream_G_temp",ns,"G_temp",9,ontology,factory);
 
 			//Register new streams in the engine
 			engine.registerStream(Stream_C_Wtemp);
@@ -164,10 +191,12 @@ public class Example {
 			Thread Stream_G_temp_Thread = new Thread(Stream_G_temp);
 
 			//Register new query in the engine
-			CsparqlQueryResultProxy c = engine.registerQuery(queryBody, false);
+			CsparqlQueryResultProxy c_S6 = engine.registerQuery(queryS6, false);
+			CsparqlQueryResultProxy c_S7 = engine.registerQuery(queryS7, false);
 
 			//Attach a result consumer to the query result proxy to print the results on the console
-			c.addObserver(new ConsoleFormatter());	
+			c_S6.addObserver(new ConsoleFormatter("S6 DETECTED"));	
+			c_S7.addObserver(new ConsoleFormatter("S7 DETECTED"));	
 
 
 			//Start streaming data
