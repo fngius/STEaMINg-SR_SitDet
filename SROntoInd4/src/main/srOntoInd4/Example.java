@@ -84,68 +84,14 @@ public class Example {
 			//engine.putStaticNamedModel("http://streamreasoning.org/larkc/csparql/LBSMA-static-k.rdf", "http://streamreasoning.org/larkc/csparql/LBSMA-static-k.rdf");
 			//engine.putStaticNamedModel("http://streamreasoning.org/roomConnection",CsparqlUtils.serializeRDFFile("/home/franco/Repositories/SR-OntoInd4/SROntoInd4/examples_files/ex.rdf"));
 
-			engine.putStaticNamedModel("http://streamreasoning.org/roomConne",CsparqlUtils.serializeRDFFile("/home/franco/Repositories/OntoInd4/NEWONTOLOGY.owl"));
-
-			//String fileOntology = "/home/franco/Repositories/OntoInd4/test.owl";
-			String fileOntology = "/home/franco/Repositories/OntoInd4/NEWONTOLOGY.owl";
-
-			/*
-			final String queryBody = "REGISTER QUERY reasoning AS "
-					+ "PREFIX :<http://onto#> "
-					+ "PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#> "
-					//+ "CONSTRUCT { ?o1 :isInSituation [a :situationCODE1234] } "
-					//+ "CONSTRUCT { [] a :situationCODE1234 ; :hasObservation ?o1 ; :hasObservation ?o2 . } "
-					+ "SELECT ?o1 ?o2 ?average "
-					+ "FROM STREAM <sensorTM2> [RANGE 5s TUMBLING] " //STEP 5s
-					+ "FROM STREAM <sensorTM1> [RANGE 5s TUMBLING] "
-					+ "FROM <http://streamreasoning.org/roomConnection> "
-					+ "WHERE { "
-					+ " :sensorTM1 :madeObservation ?o1 ." // ?s instead of :sensorTM1 for both cases
-					+ " ?o1 :hasSimpleResult ?p1 ."
-					+ " ?o1 :hasTime ?r1 . "
-					+ " ?s2 :madeObservation ?o2 ."
-					+ "{ SELECT ?s2 ( avg(?p2) AS ?average ) "
-					+ "  WHERE { "
-					+ "    ?s2 :madeObservation ?o2 ." //
-					+ "    ?o2 :hasSimpleResult ?p2 ."
-					+ "    ?o2 :hasTime ?r2 ."
-					+ "  } "
-					+ "  GROUP BY ?s2"
-					+ "  HAVING ( avg(?p2) > 2 ) "
-					+ "} "
-					+ "FILTER ( ?p1 > 2 && ?s2 != :sensorTM1 ) . "
-					+ " } ";
-			 */
-
-			String queryS6 = "REGISTER QUERY reasoning AS "
-					+ "PREFIX : <http://onto#> "
-					+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-					+ "PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#> "
-					//+ "CONSTRUCT { [] a :situationCODE1234 ; :hasObservation ?o1 ; :hasObservation ?o2 . } "
-					+ "SELECT ?o1 ?o2 ?o3 ?m ?pl "
-					+ "FROM STREAM <Stream_C_Wtemp> [RANGE 10s TUMBLING] "
-					+ "FROM STREAM <Stream_TG_temp> [RANGE 10s TUMBLING] "
-					+ "FROM STREAM <Stream_G_temp>  [RANGE 10s TUMBLING] "
-					+ "FROM <http://streamreasoning.org/roomConne> "
-					+ "WHERE { "
-					+ "{ ?m         :isPartOf        ?pl ."
-					+ "  ?m         sosa:hosts       sosa:S_C_Wtemp ." 
-					+	"  :S_C_Wtemp :madeObservation ?o1 ."
-					+ "  ?o1        :hasSimpleResult ?p1 ."
-					+ "  ?m        sosa:hosts       sosa:S_TG_temp ."
-					+ "  :S_TG_temp :madeObservation ?o2 ."
-					+ "  ?o2        :hasSimpleResult ?p2 ."
-					+ "  ?m        sosa:hosts       sosa:S_G_temp ."
-					+ "  :S_G_temp  :madeObservation ?o3 ."
-					+ "  ?o3        :hasSimpleResult ?p3 ."
-					+ "FILTER ("
-					//+ "f:timestamp(:sensorTM1,:madeObservation,?o1) < f:timestamp(?s1,:madeObservation,?o2)"
-					//+ " && "
-					+ "?p1 > 1.0  && ?p2 > 1.0 && ?p3 > 1.0 ). }"
-					+ "} ";
+			engine.putStaticNamedModel("http://streamreasoning.org/ContextOntology-COInd4",CsparqlUtils.serializeRDFFile("/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl"));
+			
+			//String fileOntology = "/home/franco/Repositories/OntoInd4/NEWONTOLOGY.owl";
+			String fileOntology = "/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl";
+			
 
 					String queryS7 = "REGISTER QUERY reasoning AS "
-					+ "PREFIX : <http://onto#> "
+					+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 					+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 					+ "PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#> "
 					//+ "CONSTRUCT { [] a :situationCODE1234 ; :hasObservation ?o1 ; :hasObservation ?o2 . } "
@@ -153,16 +99,16 @@ public class Example {
 					+ "FROM STREAM <Stream_C_Wtemp> [RANGE 10s TUMBLING] "
 					+ "FROM STREAM <Stream_TG_temp> [RANGE 10s TUMBLING] "
 					+ "FROM STREAM <Stream_G_temp>  [RANGE 10s TUMBLING] "
-					+ "FROM <http://streamreasoning.org/roomConne> "
+					+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 					+ "WHERE { "
 					+ "{ ?m         :isPartOf        ?pl ."
 					+ "  ?m         sosa:hosts       sosa:S_C_Wtemp ." 
 					+	"  :S_C_Wtemp :madeObservation ?o1 ."
 					+ "  ?o1        :hasSimpleResult ?p1 ."
-					+ "  ?m        sosa:hosts       sosa:S_TG_temp ."
+					+ "  ?m         sosa:hosts       sosa:S_TG_temp ."
 					+ "  :S_TG_temp :madeObservation ?o2 ."
 					+ "  ?o2        :hasSimpleResult ?p2 ."
-					+ "  ?m        sosa:hosts       sosa:S_G_temp ."
+					+ "  ?m         sosa:hosts       sosa:S_G_temp ."
 					+ "  :S_G_temp  :madeObservation ?o3 ."
 					+ "  ?o3        :hasSimpleResult ?p3 ."
 					+ "FILTER ("
@@ -173,11 +119,11 @@ public class Example {
 
 			OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 			OWLDataFactory factory = manager.getOWLDataFactory();
-			String ontologyURI = "http://onto";
+			String ontologyURI = "http://semanticweb.org/STEaMINg/ContextOntology-COInd4";
 			String ns = ontologyURI + "#";
 			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(fileOntology));
 			
-			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_C_Wtemp",ns,"C_Wtemp",9,ontology,factory);
+			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_C_Wtemp",ns,"C_Wtemp",2,ontology,factory);
 			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_TG_temp",ns,"TG_temp",9,ontology,factory);
 			SensorsStreamer Stream_G_temp = new SensorsStreamer("Stream_G_temp",ns,"G_temp",9,ontology,factory);
 
@@ -191,12 +137,12 @@ public class Example {
 			Thread Stream_G_temp_Thread = new Thread(Stream_G_temp);
 
 			//Register new query in the engine
-			CsparqlQueryResultProxy c_S6 = engine.registerQuery(queryS6, false);
+			//CsparqlQueryResultProxy c_S6 = engine.registerQuery(queryS6, false);
 			CsparqlQueryResultProxy c_S7 = engine.registerQuery(queryS7, false);
 
 			//Attach a result consumer to the query result proxy to print the results on the console
-			c_S6.addObserver(new ConsoleFormatter("S6 DETECTED"));	
-			c_S7.addObserver(new ConsoleFormatter("S7 DETECTED"));	
+			//c_S6.addObserver(new ConsoleFormatter("S6",ns,ontology,factory));	
+			c_S7.addObserver(new ConsoleFormatter("S7",ns,ontology,factory));	
 
 
 			//Start streaming data
@@ -216,3 +162,5 @@ public class Example {
 	}
 
 }
+
+

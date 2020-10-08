@@ -48,7 +48,7 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
 		int observationIndex = 0;
 		int timeIndex = 0;
 
-		String ontologyURI = "http://onto";
+		String ontologyURI = "http://semanticweb.org/STEaMINg/ContextOntology-COInd4";
 		String ns = ontologyURI + "#";
 		String pre_SOSAOnt = "http://www.w3.org/ns/sosa/";
 		String pre_TIME = "http://www.w3.org/2006/time#";
@@ -67,10 +67,7 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
 		while(true){
 			try{
 				result = random.nextInt(5);
-				//ZonedDateTime zdt = ZonedDateTime.now();
-				//java.util.Date date = java.util.Date.from( zdt.toInstant() );
 				Timestamp date = new Timestamp(System.currentTimeMillis());
-				//observationIndex = random.nextInt(Integer.MAX_VALUE);
 
 				//RdfQuadruple q = new RdfQuadruple(baseUri + "M", baseUri + "hosts", baseUri + "sensorTM", System.currentTimeMillis());
 				//System.out.println(q);
