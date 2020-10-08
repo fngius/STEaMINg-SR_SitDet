@@ -94,12 +94,8 @@ public class Example {
 			engine.initialize(true);
 
 			// put static model
-			//engine.putStaticNamedModel("http://streamreasoning.org/larkc/csparql/LBSMA-static-k.rdf", "http://streamreasoning.org/larkc/csparql/LBSMA-static-k.rdf");
-			//engine.putStaticNamedModel("http://streamreasoning.org/roomConnection",CsparqlUtils.serializeRDFFile("/home/franco/Repositories/SR-OntoInd4/SROntoInd4/examples_files/ex.rdf"));
-
 			engine.putStaticNamedModel("http://streamreasoning.org/ContextOntology-COInd4",CsparqlUtils.serializeRDFFile("/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl"));
 			
-			//String fileOntology = "/home/franco/Repositories/OntoInd4/NEWONTOLOGY.owl";
 			String fileOntology = "/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl";
 			
 			String queryS1 = "REGISTER QUERY S1detection AS "
@@ -297,7 +293,6 @@ public class Example {
 			+ " :S_G_temp  :madeObservation ?o3 ."
 			+ " ?o3        :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
-			//+ "   ?v1 > 0.0  && ?v2 > 0.0 && ?v3 > 0.0 ) . "
 			+ "		?v1 > 80.0 && "
 			+ "		?v2 < 35.0 && "
 			+ "		?v3 > 45.0 ) . "
@@ -483,8 +478,6 @@ public class Example {
 			+ "		?v3 < 5.0 ) . "
 			+ "} ";
 
-		//+ "CONSTRUCT { [] a :situationCODE1234 ; :hasObservation ?o1 ; :hasObservation ?o2 . } "
-		//+ "f:timestamp(:sensorTM1,:madeObservation,?o1) < f:timestamp(?s1,:madeObservation,?o2)"
 
 			OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 			OWLDataFactory factory = manager.getOWLDataFactory();
@@ -492,9 +485,9 @@ public class Example {
 			String ns = ontologyURI + "#";
 			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(fileOntology));
 			
-			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_S_C_Wtemp",ns,"C_Wtemp",2,50,90,ontology,factory); //50-90
-			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_S_TG_temp",ns,"TG_temp",9,30,40,ontology,factory); //30-40
-			SensorsStreamer Stream_G_temp = new SensorsStreamer("Stream_S_G_temp",ns,"G_temp",9,40,50,ontology,factory);    //40-50
+			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_S_C_Wtemp",ns,"C_Wtemp",2,50,90,ontology,factory);
+			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_S_TG_temp",ns,"TG_temp",9,30,40,ontology,factory);
+			SensorsStreamer Stream_G_temp = new SensorsStreamer("Stream_S_G_temp",ns,"G_temp",9,40,50,ontology,factory);
 			SensorsStreamer Stream_P_temp = new SensorsStreamer("Stream_S_P_temp",ns,"P_temp",9,25,50,ontology,factory);
 			SensorsStreamer Stream_E_temp = new SensorsStreamer("Stream_S_E_temp",ns,"E_temp",9,15,30,ontology,factory);
 			SensorsStreamer Stream_PowerOutput = new SensorsStreamer("Stream_S_PowerOutput",ns,"PowerOutput",9,100,2100,ontology,factory);
@@ -542,7 +535,6 @@ public class Example {
 			Thread Stream_R_Pangle_Thread = new Thread(Stream_R_Pangle);
 
 			//Register new query in the engine
-			
 			CsparqlQueryResultProxy c_S1 = engine.registerQuery(queryS1, false);
 			CsparqlQueryResultProxy c_S2 = engine.registerQuery(queryS2, false);
 			CsparqlQueryResultProxy c_S3 = engine.registerQuery(queryS3, false);
@@ -560,7 +552,6 @@ public class Example {
 
 
 			//Attach a result consumer to the query result proxy to print the results on the console
-			
 			c_S1.addObserver(new ConsoleFormatter("S1",ns,ontology,factory));	
 			c_S2.addObserver(new ConsoleFormatter("S2",ns,ontology,factory));	
 			c_S3.addObserver(new ConsoleFormatter("S3",ns,ontology,factory));	
