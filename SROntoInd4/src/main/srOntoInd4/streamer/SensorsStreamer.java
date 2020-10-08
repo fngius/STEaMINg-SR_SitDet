@@ -29,14 +29,18 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
 	private long sleepTime;
 	private String baseUri;
 	private String prop;
+	private int Tmin;
+	private int Tmax;
 	private OWLOntology ontology;
 	private OWLDataFactory factory;
 
-	public SensorsStreamer(String iri, String baseUri, String prop,long sleepTime, OWLOntology ontology, OWLDataFactory factory) {
+	public SensorsStreamer(String iri, String baseUri, String prop,long sleepTime,int Tmin,int Tmax, OWLOntology ontology, OWLDataFactory factory) {
 		super(iri);
 		this.sleepTime = sleepTime;
 		this.baseUri = baseUri;
 		this.prop = prop;
+		this.Tmin = Tmin;
+		this.Tmax = Tmax;
 		this.ontology = ontology;
 		this.factory = factory;
 	}
@@ -66,7 +70,7 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
 
 		while(true){
 			try{
-				result = random.nextInt(5);
+				result = random.nextInt(Tmax - Tmin + 1) + Tmin;
 				Timestamp date = new Timestamp(System.currentTimeMillis());
 
 				//RdfQuadruple q = new RdfQuadruple(baseUri + "M", baseUri + "hosts", baseUri + "sensorTM", System.currentTimeMillis());

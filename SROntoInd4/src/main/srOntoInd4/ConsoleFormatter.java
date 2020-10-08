@@ -49,7 +49,7 @@ public class ConsoleFormatter extends ResultFormatter {
         System.out.println(situationName + " DETECTED. "+ rdfTable.size() + " result at SystemTime: "+System.currentTimeMillis());
         rdfTable.stream().forEach((t) -> {
           System.out.println(t.get(0) + " and " + t.get(1) + " are involved in situation " + situationName);
-          
+
           OWLClass Situation = factory.getOWLClass(IRI.create(ns + "Situation"));
           OWLIndividual sit = factory.getOWLNamedIndividual(IRI.create(ns,situationName + "-" + System.currentTimeMillis()));
           OWLClassAssertionAxiom sitType = factory.getOWLClassAssertionAxiom(Situation, sit);
@@ -76,6 +76,8 @@ public class ConsoleFormatter extends ResultFormatter {
           }
           
       });
+      System.out.println();
+      System.out.println();
       //sitIndex++;
     }
     //for (final RDFTuple t : res) {

@@ -106,25 +106,25 @@ public class Example {
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_G_current> [RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_C_temp> 		[RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_T_temp> 		[RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_OilTemp> 	[RANGE 20s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_G_current> [RANGE 20s STEP 5s] "
+			+ "FROM STREAM <Stream_S_C_temp> 		[RANGE 20s STEP 5s] "
+			+ "FROM STREAM <Stream_S_T_temp> 		[RANGE 20s STEP 5s] "
+			+ "FROM STREAM <Stream_S_OilTemp> 	[RANGE 20s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 						:isPartOf 				?pl . "
-			+ "	?m 						sosa:hosts				sosa:S_G_current . "
-			+ "	:S_G_current 	:madeObservation 	?o1 . "
-			+ "	?o1 					:hasSimpleResult 	?v1 . "
-			+ "	?m 						sosa:hosts 				sosa:S_C_temp . "
-			+ "	:S_C_temp 		:madeObservation 	?o2 "
-			+ "	?o2						:hasSimpleResult 	?v2 . "
-			+ "	?m 						sosa:hosts 				sosa:S_T_temp . "
-			+ "	:S_T_temp 		:madeObservation 	?o3 . "
-			+ "	?o3 					:hasSimpleResult 	?v3 . "
-			+ "	?m 						sosa:hosts 				sosa:S_OilTemp . "
-			+ "	:S_OilTemp 		:madeObservation 	?o4 . "
-			+ "	?o4 					:hasSimpleResult 	?v4 . "
+			+ " ?m           :isPartOf        ?pl ."
+			+ " ?m           sosa:hosts       sosa:S_G_current ." 
+			+	" :S_G_current :madeObservation ?o1 ."
+			+ " ?o1          :hasSimpleResult ?v1 ."
+			+ " ?m           sosa:hosts       sosa:S_C_temp ."
+			+ " :S_C_temp    :madeObservation ?o2 ."
+			+ " ?o2          :hasSimpleResult ?v2 ."
+			+ " ?m           sosa:hosts       sosa:S_T_temp ."
+			+ " :S_T_temp    :madeObservation ?o3 ."
+			+ " ?o3          :hasSimpleResult ?v3 ."
+			+ " ?m           sosa:hosts       sosa:S_OilTemp ."
+			+ " :S_OilTemp   :madeObservation ?o4 ."
+			+ " ?o4          :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
 			+ "		?v1 > 800.0 && "
 			+ "		?v2 > 40.0  && "
@@ -133,58 +133,58 @@ public class Example {
 			+ "} ";
 
 		String queryS2 = "REGISTER QUERY S2detection AS "
-			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
-			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_G_current> [RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_C_temp> 		[RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_T_temp> 		[RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_OilTemp> 	[RANGE 20s STEPS 5s] "
-			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
-			+ "WHERE { "
-			+ "	?m 						:isPartOf 				?pl . "
-			+ "	?m 						sosa:hosts				sosa:S_G_current . "
-			+ "	:S_G_current 	:madeObservation 	?o1 . "
-			+ "	?o1 					:hasSimpleResult 	?v1 . "
-			+ "	?m 						sosa:hosts 				sosa:S_C_temp . "
-			+ "	:S_C_temp 		:madeObservation 	?o2 "
-			+ "	?o2						:hasSimpleResult 	?v2 . "
-			+ "	?m 						sosa:hosts 				sosa:S_T_temp . "
-			+ "	:S_T_temp 		:madeObservation 	?o3 . "
-			+ "	?o3 					:hasSimpleResult 	?v3 . "
-			+ "	?m 						sosa:hosts 				sosa:S_OilTemp . "
-			+ "	:S_OilTemp 		:madeObservation 	?o4 . "
-			+ "	?o4 					:hasSimpleResult 	?v4 . "
-			+ " FILTER ( "
-			+ "		?v1 > 800.0 && "
-			+ "		?v2 > 40.0  && "
-			+ "		?v3 > 45.0  && "
-			+ "		?v4 > 60.0 ) . "
-			+ "} ";
+		+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
+		+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
+		+ "SELECT ?m ?pl "
+		+ "FROM STREAM <Stream_S_G_current> [RANGE 20s STEP 5s] "
+		+ "FROM STREAM <Stream_S_C_temp> 		[RANGE 20s STEP 5s] "
+		+ "FROM STREAM <Stream_S_T_temp> 		[RANGE 20s STEP 5s] "
+		+ "FROM STREAM <Stream_S_OilTemp> 	[RANGE 20s STEP 5s] "
+		+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
+		+ "WHERE { "
+		+ " ?m           :isPartOf        ?pl ."
+		+ " ?m           sosa:hosts       sosa:S_G_current ." 
+		+	" :S_G_current :madeObservation ?o1 ."
+		+ " ?o1          :hasSimpleResult ?v1 ."
+		+ " ?m           sosa:hosts       sosa:S_C_temp ."
+		+ " :S_C_temp    :madeObservation ?o2 ."
+		+ " ?o2          :hasSimpleResult ?v2 ."
+		+ " ?m           sosa:hosts       sosa:S_T_temp ."
+		+ " :S_T_temp    :madeObservation ?o3 ."
+		+ " ?o3          :hasSimpleResult ?v3 ."
+		+ " ?m           sosa:hosts       sosa:S_OilTemp ."
+		+ " :S_OilTemp   :madeObservation ?o4 ."
+		+ " ?o4          :hasSimpleResult ?v3 ."
+		+ " FILTER ( "
+		+ "		?v1 > 800.0 && "
+		+ "		?v2 > 40.0  && "
+		+ "		?v3 > 45.0  && "
+		+ "		?v4 > 60.0 ) . "
+		+ "} ";
 		
 		String queryS3 = "REGISTER QUERY S3detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_P_temp> 	[RANGE 25s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_GB_temp> [RANGE 25s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_G_speed> [RANGE 25s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_E_Temp> 	[RANGE 25s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_P_temp> 	[RANGE 25s STEP 5s] "
+			+ "FROM STREAM <Stream_S_GB_temp> [RANGE 25s STEP 5s] "
+			+ "FROM STREAM <Stream_S_G_speed> [RANGE 25s STEP 5s] "
+			+ "FROM STREAM <Stream_S_E_temp> 	[RANGE 25s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 						:isPartOf 				?pl . "
-			+ "	?m 						sosa:hosts				sosa:S_P_temp . "
-			+ "	:S_P_temp		 	:madeObservation 	?o1 . "
-			+ "	?o1 					:hasSimpleResult 	?v1 . "
-			+ "	?m 						sosa:hosts 				sosa:S_GB_temp . "
-			+ "	:S_GB_temp 		:madeObservation 	?o2 "
-			+ "	?o2						:hasSimpleResult 	?v2 . "
-			+ "	?m 						sosa:hosts 				sosa:S_G_speed . "
-			+ "	:S_G_speed 		:madeObservation 	?o3 . "
-			+ "	?o3 					:hasSimpleResult 	?v3 . "
-			+ "	?m 						sosa:hosts 				sosa:S_E_Temp . "
-			+ "	:S_E_Temp 		:madeObservation 	?o4 . "
-			+ "	?o4 					:hasSimpleResult 	?v4 . "
+			+ " ?m           :isPartOf        ?pl ."
+			+ " ?m           sosa:hosts       sosa:S_P_temp ." 
+			+	" :S_P_temp    :madeObservation ?o1 ."
+			+ " ?o1          :hasSimpleResult ?v1 ."
+			+ " ?m           sosa:hosts       sosa:S_GB_temp ." 
+			+	" :S_GB_temp   :madeObservation ?o2 ."
+			+ " ?o2          :hasSimpleResult ?v2 ."
+			+ " ?m           sosa:hosts       sosa:S_G_speed ." 
+			+	" :S_G_speed   :madeObservation ?o3 ."
+			+ " ?o3          :hasSimpleResult ?v3 ."
+			+ " ?m           sosa:hosts       sosa:S_E_temp ." 
+			+	" :S_E_temp    :madeObservation ?o4 ."
+			+ " ?o4          :hasSimpleResult ?v4 ."
 			+ " FILTER ( "
 			+ "		?v1 < 35.0   && "
 			+ "		?v2 > 40.0   && "
@@ -196,25 +196,25 @@ public class Example {
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_P_temp> 	[RANGE 25s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_GB_temp> [RANGE 25s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_G_speed> [RANGE 25s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_E_Temp> 	[RANGE 25s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_P_temp> 	[RANGE 25s STEP 5s] "
+			+ "FROM STREAM <Stream_S_GB_temp> [RANGE 25s STEP 5s] "
+			+ "FROM STREAM <Stream_S_G_speed> [RANGE 25s STEP 5s] "
+			+ "FROM STREAM <Stream_S_E_temp> 	[RANGE 25s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 						:isPartOf 				?pl . "
-			+ "	?m 						sosa:hosts				sosa:S_P_temp . "
-			+ "	:S_P_temp		 	:madeObservation 	?o1 . "
-			+ "	?o1 					:hasSimpleResult 	?v1 . "
-			+ "	?m 						sosa:hosts 				sosa:S_GB_temp . "
-			+ "	:S_GB_temp 		:madeObservation 	?o2 "
-			+ "	?o2						:hasSimpleResult 	?v2 . "
-			+ "	?m 						sosa:hosts 				sosa:S_G_speed . "
-			+ "	:S_G_speed 		:madeObservation 	?o3 . "
-			+ "	?o3 					:hasSimpleResult 	?v3 . "
-			+ "	?m 						sosa:hosts 				sosa:S_E_Temp . "
-			+ "	:S_E_Temp 		:madeObservation 	?o4 . "
-			+ "	?o4 					:hasSimpleResult 	?v4 . "
+			+ " ?m           :isPartOf        ?pl ."
+			+ " ?m           sosa:hosts       sosa:S_P_temp ." 
+			+	" :S_P_temp    :madeObservation ?o1 ."
+			+ " ?o1          :hasSimpleResult ?v1 ."
+			+ " ?m           sosa:hosts       sosa:S_GB_temp ." 
+			+	" :S_GB_temp   :madeObservation ?o2 ."
+			+ " ?o2          :hasSimpleResult ?v2 ."
+			+ " ?m           sosa:hosts       sosa:S_G_speed ." 
+			+	" :S_G_speed   :madeObservation ?o3 ."
+			+ " ?o3          :hasSimpleResult ?v3 ."
+			+ " ?m           sosa:hosts       sosa:S_E_temp ." 
+			+	" :S_E_temp    :madeObservation ?o4 ."
+			+ " ?o4          :hasSimpleResult ?v4 ."
 			+ " FILTER ( "
 			+ "		?v1 < 35.0   && "
 			+ "		?v2 > 60.0   && "
@@ -226,25 +226,25 @@ public class Example {
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_P_temp> 	[RANGE 25s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_GB_temp> [RANGE 25s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_G_speed> [RANGE 25s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_E_Temp> 	[RANGE 25s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_P_temp> 	[RANGE 25s STEP 5s] "
+			+ "FROM STREAM <Stream_S_GB_temp> [RANGE 25s STEP 5s] "
+			+ "FROM STREAM <Stream_S_G_speed> [RANGE 25s STEP 5s] "
+			+ "FROM STREAM <Stream_S_E_temp> 	[RANGE 25s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 						:isPartOf 				?pl . "
-			+ "	?m 						sosa:hosts				sosa:S_P_temp . "
-			+ "	:S_P_temp		 	:madeObservation 	?o1 . "
-			+ "	?o1 					:hasSimpleResult 	?v1 . "
-			+ "	?m 						sosa:hosts 				sosa:S_GB_temp . "
-			+ "	:S_GB_temp 		:madeObservation 	?o2 "
-			+ "	?o2						:hasSimpleResult 	?v2 . "
-			+ "	?m 						sosa:hosts 				sosa:S_G_speed . "
-			+ "	:S_G_speed 		:madeObservation 	?o3 . "
-			+ "	?o3 					:hasSimpleResult 	?v3 . "
-			+ "	?m 						sosa:hosts 				sosa:S_E_Temp . "
-			+ "	:S_E_Temp 		:madeObservation 	?o4 . "
-			+ "	?o4 					:hasSimpleResult 	?v4 . "
+			+ " ?m           :isPartOf        ?pl ."
+			+ " ?m           sosa:hosts       sosa:S_P_temp ." 
+			+	" :S_P_temp    :madeObservation ?o1 ."
+			+ " ?o1          :hasSimpleResult ?v1 ."
+			+ " ?m           sosa:hosts       sosa:S_GB_temp ." 
+			+	" :S_GB_temp   :madeObservation ?o2 ."
+			+ " ?o2          :hasSimpleResult ?v2 ."
+			+ " ?m           sosa:hosts       sosa:S_G_speed ." 
+			+	" :S_G_speed   :madeObservation ?o3 ."
+			+ " ?o3          :hasSimpleResult ?v3 ."
+			+ " ?m           sosa:hosts       sosa:S_E_temp ." 
+			+	" :S_E_temp    :madeObservation ?o4 ."
+			+ " ?o4          :hasSimpleResult ?v4 ."
 			+ " FILTER ( "
 			+ "		?v1 > 40.0   && "
 			+ "		?v2 > 60.0   && "
@@ -256,21 +256,21 @@ public class Example {
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_C_Wtemp> [RANGE 15s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_TG_temp> [RANGE 15s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_G_temp> 	[RANGE 15s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_C_Wtemp> [RANGE 15s STEP 5s] "
+			+ "FROM STREAM <Stream_S_TG_temp> [RANGE 15s STEP 5s] "
+			+ "FROM STREAM <Stream_S_G_temp> 	[RANGE 15s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 					:isPartOf 				?pl . "
-			+ "	?m 					sosa:hosts				sosa:S_C_Wtemp . "
-			+ "	:S_C_Wtemp 	:madeObservation 	?o1 . "
-			+ "	?o1 				:hasSimpleResult 	?v1 . "
-			+ "	?m 					sosa:hosts 				sosa:S_TG_temp . "
-			+ "	:S_TG_temp 	:madeObservation 	?o2 "
-			+ "	?o2					:hasSimpleResult 	?v2 . "
-			+ "	?m 					sosa:hosts 				sosa:S_G_temp . "
-			+ "	:S_G_temp 	:madeObservation 	?o3 . "
-			+ "	?o3 				:hasSimpleResult 	?v3 . "
+			+ " ?m         :isPartOf        ?pl ."
+			+ " ?m         sosa:hosts       sosa:S_C_Wtemp ." 
+			+	" :S_C_Wtemp :madeObservation ?o1 ."
+			+ " ?o1        :hasSimpleResult ?v1 ."
+			+ " ?m         sosa:hosts       sosa:S_TG_temp ."
+			+ " :S_TG_temp :madeObservation ?o2 ."
+			+ " ?o2        :hasSimpleResult ?v2 ."
+			+ " ?m         sosa:hosts       sosa:S_G_temp ."
+			+ " :S_G_temp  :madeObservation ?o3 ."
+			+ " ?o3        :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
 			+ "		?v1 > 60.0 && "
 			+ "		?v2 < 35.0 && "
@@ -286,42 +286,42 @@ public class Example {
 			+ "FROM STREAM <Stream_S_G_temp> 	[RANGE 15s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "{ ?m         :isPartOf        ?pl ."
-			+ "  ?m         sosa:hosts       sosa:S_C_Wtemp ." 
-			+	"  :S_C_Wtemp :madeObservation ?o1 ."
-			+ "  ?o1        :hasSimpleResult ?v1 ."
-			+ "  ?m         sosa:hosts       sosa:S_TG_temp ."
-			+ "  :S_TG_temp :madeObservation ?o2 ."
-			+ "  ?o2        :hasSimpleResult ?v2 ."
-			+ "  ?m         sosa:hosts       sosa:S_G_temp ."
-			+ "  :S_G_temp  :madeObservation ?o3 ."
-			+ "  ?o3        :hasSimpleResult ?v3 ."
+			+ " ?m         :isPartOf        ?pl ."
+			+ " ?m         sosa:hosts       sosa:S_C_Wtemp ." 
+			+	" :S_C_Wtemp :madeObservation ?o1 ."
+			+ " ?o1        :hasSimpleResult ?v1 ."
+			+ " ?m         sosa:hosts       sosa:S_TG_temp ."
+			+ " :S_TG_temp :madeObservation ?o2 ."
+			+ " ?o2        :hasSimpleResult ?v2 ."
+			+ " ?m         sosa:hosts       sosa:S_G_temp ."
+			+ " :S_G_temp  :madeObservation ?o3 ."
+			+ " ?o3        :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
-			+ "   ?v1 > 0.0  && ?v2 > 0.0 && ?v3 > 0.0 ) . }"
-			//+ "		?v1 > 80.0 && "
-			//+ "		?v2 < 35.0 && "
-			//+ "		?v3 > 45.0 ) . "
+			//+ "   ?v1 > 0.0  && ?v2 > 0.0 && ?v3 > 0.0 ) . "
+			+ "		?v1 > 80.0 && "
+			+ "		?v2 < 35.0 && "
+			+ "		?v3 > 45.0 ) . "
 			+ "} ";
 		
 		String queryS8 = "REGISTER QUERY S8detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_P_temp> 		[RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_TG_temp> 	[RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_Conv_temp> [RANGE 20s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_P_temp> 		[RANGE 20s STEP 5s] "
+			+ "FROM STREAM <Stream_S_TG_temp> 	[RANGE 20s STEP 5s] "
+			+ "FROM STREAM <Stream_S_Conv_temp> [RANGE 20s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 						:isPartOf 				?pl . "
-			+ "	?m 						sosa:hosts				sosa:S_P_temp . "
-			+ "	:S_P_Wtemp 		:madeObservation 	?o1 . "
-			+ "	?o1 					:hasSimpleResult 	?v1 . "
-			+ "	?m 						sosa:hosts 				sosa:S_TG_temp . "
-			+ "	:S_TG_temp 		:madeObservation 	?o2 "
-			+ "	?o2						:hasSimpleResult 	?v2 . "
-			+ "	?m 						sosa:hosts 				sosa:S_Conv_temp . "
-			+ "	:S_Conv_temp 	:madeObservation 	?o3 . "
-			+ "	?o3 					:hasSimpleResult 	?v3 . "
+			+ " ?m            :isPartOf        ?pl ."
+			+ " ?m            sosa:hosts       sosa:S_P_temp ." 
+			+	" :S_P_temp     :madeObservation ?o1 ."
+			+ " ?o1           :hasSimpleResult ?v1 ."
+			+ " ?m            sosa:hosts       sosa:S_TG_temp ."
+			+ " :S_TG_temp    :madeObservation ?o2 ."
+			+ " ?o2           :hasSimpleResult ?v2 ."
+			+ " ?m            sosa:hosts       sosa:S_Conv_temp ."
+			+ " :S_Conv_temp  :madeObservation ?o3 ."
+			+ " ?o3           :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
 			+ "		?v1 < 35.0 && "
 			+ "		?v2 < 35.0 && "
@@ -332,21 +332,21 @@ public class Example {
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_P_temp> 		[RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_TG_temp> 	[RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_Conv_temp> [RANGE 20s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_P_temp> 		[RANGE 20s STEP 5s] "
+			+ "FROM STREAM <Stream_S_TG_temp> 	[RANGE 20s STEP 5s] "
+			+ "FROM STREAM <Stream_S_Conv_temp> [RANGE 20s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 						:isPartOf 				?pl . "
-			+ "	?m 						sosa:hosts				sosa:S_P_temp . "
-			+ "	:S_P_Wtemp 		:madeObservation 	?o1 . "
-			+ "	?o1 					:hasSimpleResult 	?v1 . "
-			+ "	?m 						sosa:hosts 				sosa:S_TG_temp . "
-			+ "	:S_TG_temp 		:madeObservation 	?o2 "
-			+ "	?o2						:hasSimpleResult 	?v2 . "
-			+ "	?m 						sosa:hosts 				sosa:S_Conv_temp . "
-			+ "	:S_Conv_temp 	:madeObservation 	?o3 . "
-			+ "	?o3 					:hasSimpleResult 	?v3 . "
+			+ " ?m            :isPartOf        ?pl ."
+			+ " ?m            sosa:hosts       sosa:S_P_temp ." 
+			+	" :S_P_temp     :madeObservation ?o1 ."
+			+ " ?o1           :hasSimpleResult ?v1 ."
+			+ " ?m            sosa:hosts       sosa:S_TG_temp ."
+			+ " :S_TG_temp    :madeObservation ?o2 ."
+			+ " ?o2           :hasSimpleResult ?v2 ."
+			+ " ?m            sosa:hosts       sosa:S_Conv_temp ."
+			+ " :S_Conv_temp  :madeObservation ?o3 ."
+			+ " ?o3           :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
 			+ "		?v1 < 35.0 && "
 			+ "		?v2 < 35.0 && "
@@ -357,25 +357,25 @@ public class Example {
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_C_Wtemp> 	[RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_TG_temp> 	[RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_Conv_temp> [RANGE 20s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_G_temp> 		[RANGE 20s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_C_Wtemp> 	[RANGE 20s STEP 5s] "
+			+ "FROM STREAM <Stream_S_TG_temp> 	[RANGE 20s STEP 5s] "
+			+ "FROM STREAM <Stream_S_Conv_temp> [RANGE 20s STEP 5s] "
+			+ "FROM STREAM <Stream_S_G_temp> 		[RANGE 20s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 						:isPartOf 				?pl . "
-			+ "	?m 						sosa:hosts				sosa:S_C_Wtemp . "
-			+ "	:S_P_Wtemp 		:madeObservation 	?o1 . "
-			+ "	?o1 					:hasSimpleResult 	?v1 . "
-			+ "	?m 						sosa:hosts 				sosa:S_TG_temp . "
-			+ "	:S_TG_temp 		:madeObservation 	?o2 "
-			+ "	?o2						:hasSimpleResult 	?v2 . "
-			+ "	?m 						sosa:hosts 				sosa:S_Conv_temp . "
-			+ "	:S_Conv_temp 	:madeObservation 	?o3 . "
-			+ "	?o3 					:hasSimpleResult 	?v3 . "
-			+ "	?m 						sosa:hosts 				sosa:S_G_temp . "
-			+ "	:S_G_temp 		:madeObservation 	?o4 . "
-			+ "	?o4 					:hasSimpleResult 	?v4 . "
+			+ " ?m            :isPartOf        ?pl ."
+			+ " ?m            sosa:hosts       sosa:S_C_Wtemp ." 
+			+	" :S_C_Wtemp    :madeObservation ?o1 ."
+			+ " ?o1           :hasSimpleResult ?v1 ."
+			+ " ?m            sosa:hosts       sosa:S_TG_temp ."
+			+ " :S_TG_temp    :madeObservation ?o2 ."
+			+ " ?o2           :hasSimpleResult ?v2 ."
+			+ " ?m            sosa:hosts       sosa:S_Conv_temp ."
+			+ " :S_Conv_temp  :madeObservation ?o3 ."
+			+ " ?o3           :hasSimpleResult ?v3 ."
+			+ " ?m            sosa:hosts       sosa:S_G_temp ."
+			+ " :S_G_temp     :madeObservation ?o4 ."
+			+ " ?o4           :hasSimpleResult ?v4 ."
 			+ " FILTER ( "
 			+ "		?v1 > 80.0 && "
 			+ "		?v2 < 35.0 && "
@@ -387,21 +387,21 @@ public class Example {
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 30s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 30s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 30s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 30s STEP 5s] "
+			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 30s STEP 5s] "
+			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 30s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 							:isPartOf 				?pl . "
-			+ "	?m 							sosa:hosts				sosa:S_PowerOutput . "
-			+ "	:S_PowerOutput 	:madeObservation 	?o1 . "
-			+ "	?o1 						:hasSimpleResult 	?v1 . "
-			+ "	?m 							sosa:hosts 				sosa:S_R_speed . "
-			+ "	:S_R_speed 			:madeObservation 	?o2 "
-			+ "	?o2							:hasSimpleResult 	?v2 . "
-			+ "	?m 							sosa:hosts 				sosa:S_R_Pangle . "
-			+ "	:S_R_Pangle 		:madeObservation 	?o3 . "
-			+ "	?o3 						:hasSimpleResult 	?v3 . "
+			+ " ?m             :isPartOf        ?pl ."
+			+ " ?m             sosa:hosts       sosa:S_PowerOutput ." 
+			+	" :S_PowerOutput :madeObservation ?o1 ."
+			+ " ?o1            :hasSimpleResult ?v1 ."
+			+ " ?m             sosa:hosts       sosa:S_R_speed ."
+			+ " :S_R_speed     :madeObservation ?o2 ."
+			+ " ?o2            :hasSimpleResult ?v2 ."
+			+ " ?m             sosa:hosts       sosa:S_R_Pangle ."
+			+ " :S_R_Pangle    :madeObservation ?o3 ."
+			+ " ?o3            :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
 			+ "		?v1 > 2000.0 && "
 			+ "		?v2 < 200.0 && "
@@ -412,21 +412,21 @@ public class Example {
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 30s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 30s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 30s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 30s STEP 5s] "
+			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 30s STEP 5s] "
+			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 30s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 							:isPartOf 				?pl . "
-			+ "	?m 							sosa:hosts				sosa:S_PowerOutput . "
-			+ "	:S_PowerOutput 	:madeObservation 	?o1 . "
-			+ "	?o1 						:hasSimpleResult 	?v1 . "
-			+ "	?m 							sosa:hosts 				sosa:S_R_speed . "
-			+ "	:S_R_speed 			:madeObservation 	?o2 "
-			+ "	?o2							:hasSimpleResult 	?v2 . "
-			+ "	?m 							sosa:hosts 				sosa:S_R_Pangle . "
-			+ "	:S_R_Pangle 		:madeObservation 	?o3 . "
-			+ "	?o3 						:hasSimpleResult 	?v3 . "
+			+ " ?m             :isPartOf        ?pl ."
+			+ " ?m             sosa:hosts       sosa:S_PowerOutput ." 
+			+	" :S_PowerOutput :madeObservation ?o1 ."
+			+ " ?o1            :hasSimpleResult ?v1 ."
+			+ " ?m             sosa:hosts       sosa:S_R_speed ."
+			+ " :S_R_speed     :madeObservation ?o2 ."
+			+ " ?o2            :hasSimpleResult ?v2 ."
+			+ " ?m             sosa:hosts       sosa:S_R_Pangle ."
+			+ " :S_R_Pangle    :madeObservation ?o3 ."
+			+ " ?o3            :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
 			+ "		?v1 > 2000.0 && "
 			+ "		?v2 < 100.0 && "
@@ -437,21 +437,21 @@ public class Example {
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 35s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 35s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 35s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 35s STEP 5s] "
+			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 35s STEP 5s] "
+			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 35s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 							:isPartOf 				?pl . "
-			+ "	?m 							sosa:hosts				sosa:S_PowerOutput . "
-			+ "	:S_PowerOutput 	:madeObservation 	?o1 . "
-			+ "	?o1 						:hasSimpleResult 	?v1 . "
-			+ "	?m 							sosa:hosts 				sosa:S_R_speed . "
-			+ "	:S_R_speed 			:madeObservation 	?o2 "
-			+ "	?o2							:hasSimpleResult 	?v2 . "
-			+ "	?m 							sosa:hosts 				sosa:S_R_Pangle . "
-			+ "	:S_R_Pangle 		:madeObservation 	?o3 . "
-			+ "	?o3 						:hasSimpleResult 	?v3 . "
+			+ " ?m             :isPartOf        ?pl ."
+			+ " ?m             sosa:hosts       sosa:S_PowerOutput ." 
+			+	" :S_PowerOutput :madeObservation ?o1 ."
+			+ " ?o1            :hasSimpleResult ?v1 ."
+			+ " ?m             sosa:hosts       sosa:S_R_speed ."
+			+ " :S_R_speed     :madeObservation ?o2 ."
+			+ " ?o2            :hasSimpleResult ?v2 ."
+			+ " ?m             sosa:hosts       sosa:S_R_Pangle ."
+			+ " :S_R_Pangle    :madeObservation ?o3 ."
+			+ " ?o3            :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
 			+ "		?v1 < 500.0 && "
 			+ "		?v2 < 200.0 && "
@@ -462,21 +462,21 @@ public class Example {
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
 			+ "SELECT ?m ?pl "
-			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 35s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 35s STEPS 5s] "
-			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 35s STEPS 5s] "
+			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 35s STEP 5s] "
+			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 35s STEP 5s] "
+			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 35s STEP 5s] "
 			+ "FROM <http://streamreasoning.org/ContextOntology-COInd4> "
 			+ "WHERE { "
-			+ "	?m 							:isPartOf 				?pl . "
-			+ "	?m 							sosa:hosts				sosa:S_PowerOutput . "
-			+ "	:S_PowerOutput 	:madeObservation 	?o1 . "
-			+ "	?o1 						:hasSimpleResult 	?v1 . "
-			+ "	?m 							sosa:hosts 				sosa:S_R_speed . "
-			+ "	:S_R_speed 			:madeObservation 	?o2 "
-			+ "	?o2							:hasSimpleResult 	?v2 . "
-			+ "	?m 							sosa:hosts 				sosa:S_R_Pangle . "
-			+ "	:S_R_Pangle 		:madeObservation 	?o3 . "
-			+ "	?o3 						:hasSimpleResult 	?v3 . "
+			+ " ?m             :isPartOf        ?pl ."
+			+ " ?m             sosa:hosts       sosa:S_PowerOutput ." 
+			+	" :S_PowerOutput :madeObservation ?o1 ."
+			+ " ?o1            :hasSimpleResult ?v1 ."
+			+ " ?m             sosa:hosts       sosa:S_R_speed ."
+			+ " :S_R_speed     :madeObservation ?o2 ."
+			+ " ?o2            :hasSimpleResult ?v2 ."
+			+ " ?m             sosa:hosts       sosa:S_R_Pangle ."
+			+ " :S_R_Pangle    :madeObservation ?o3 ."
+			+ " ?o3            :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
 			+ "		?v1 < 200.0 && "
 			+ "		?v2 < 200.0 && "
@@ -492,29 +492,26 @@ public class Example {
 			String ns = ontologyURI + "#";
 			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(fileOntology));
 			
-			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_S_C_Wtemp",ns,"C_Wtemp",2,ontology,factory);
-			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_S_TG_temp",ns,"TG_temp",9,ontology,factory);
-			SensorsStreamer Stream_G_temp = new SensorsStreamer("Stream_S_G_temp",ns,"G_temp",9,ontology,factory);
-			/*
-			SensorsStreamer Stream_P_temp 	 	 = new SensorsStreamer("Stream_S_P_temp",ns,"P_temp",9,ontology,factory);
-			SensorsStreamer Stream_E_temp  		 = new SensorsStreamer("Stream_S_E_temp",ns,"E_temp",9,ontology,factory);
-			SensorsStreamer Stream_PowerOutput = new SensorsStreamer("Stream_S_PowerOutput",ns,"PowerOutput",9,ontology,factory);
-			SensorsStreamer Stream_G_current 	 = new SensorsStreamer("Stream_S_G_current",ns,"G_current",9,ontology,factory);
-			SensorsStreamer Stream_C_temp 		 = new SensorsStreamer("Stream_S_C_temp",ns,"C_temp",9,ontology,factory);
-			SensorsStreamer Stream_T_temp 		 = new SensorsStreamer("Stream_S_T_temp",ns,"T_temp",9,ontology,factory);
-			SensorsStreamer Stream_OilTemp 		 = new SensorsStreamer("Stream_S_OilTemp",ns,"OilTemp",9,ontology,factory);
-			SensorsStreamer Stream_GB_temp 	   = new SensorsStreamer("Stream_S_GB_temp",ns,"GB_temp",9,ontology,factory);
-			SensorsStreamer Stream_G_speed 		 = new SensorsStreamer("Stream_S_G_speed",ns,"G_speed",9,ontology,factory);
-			SensorsStreamer Stream_Conv_temp 	 = new SensorsStreamer("Stream_S_Conv_temp",ns,"Conv_temp",9,ontology,factory);
-			SensorsStreamer Stream_R_speed 		 = new SensorsStreamer("Stream_S_R_speed",ns,"R_speed",9,ontology,factory);
-			SensorsStreamer Stream_R_Pangle 	 = new SensorsStreamer("Stream_S_R_Pangle",ns,"R_Pangle",9,ontology,factory);
-			*/
+			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_S_C_Wtemp",ns,"C_Wtemp",2,50,90,ontology,factory); //50-90
+			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_S_TG_temp",ns,"TG_temp",9,30,40,ontology,factory); //30-40
+			SensorsStreamer Stream_G_temp = new SensorsStreamer("Stream_S_G_temp",ns,"G_temp",9,40,50,ontology,factory);    //40-50
+			SensorsStreamer Stream_P_temp = new SensorsStreamer("Stream_S_P_temp",ns,"P_temp",9,25,50,ontology,factory);
+			SensorsStreamer Stream_E_temp = new SensorsStreamer("Stream_S_E_temp",ns,"E_temp",9,15,30,ontology,factory);
+			SensorsStreamer Stream_PowerOutput = new SensorsStreamer("Stream_S_PowerOutput",ns,"PowerOutput",9,100,2100,ontology,factory);
+			SensorsStreamer Stream_G_current = new SensorsStreamer("Stream_S_G_current",ns,"G_current",9,700,1000,ontology,factory);
+			SensorsStreamer Stream_C_temp = new SensorsStreamer("Stream_S_C_temp",ns,"C_temp",9,30,50,ontology,factory);
+			SensorsStreamer Stream_T_temp = new SensorsStreamer("Stream_S_T_temp",ns,"T_temp",9,35,55,ontology,factory);
+			SensorsStreamer Stream_OilTemp = new SensorsStreamer("Stream_S_OilTemp",ns,"OilTemp",9,30,70,ontology,factory);
+			SensorsStreamer Stream_GB_temp = new SensorsStreamer("Stream_S_GB_temp",ns,"GB_temp",9,30,70,ontology,factory);
+			SensorsStreamer Stream_G_speed = new SensorsStreamer("Stream_S_G_speed",ns,"G_speed",9,400,600,ontology,factory);
+			SensorsStreamer Stream_Conv_temp = new SensorsStreamer("Stream_S_Conv_temp",ns,"Conv_temp",9,50,90,ontology,factory);
+			SensorsStreamer Stream_R_speed = new SensorsStreamer("Stream_S_R_speed",ns,"R_speed",9,50,300,ontology,factory);
+			SensorsStreamer Stream_R_Pangle = new SensorsStreamer("Stream_S_R_Pangle",ns,"R_Pangle",9,3,10,ontology,factory);
 
 			//Register new streams in the engine
 			engine.registerStream(Stream_C_Wtemp);
 			engine.registerStream(Stream_TG_temp);
 			engine.registerStream(Stream_G_temp);
-			/*
 			engine.registerStream(Stream_P_temp);
 			engine.registerStream(Stream_E_temp);
 			engine.registerStream(Stream_PowerOutput);
@@ -527,12 +524,10 @@ public class Example {
 			engine.registerStream(Stream_Conv_temp);
 			engine.registerStream(Stream_R_speed);
 			engine.registerStream(Stream_R_Pangle);
-			*/
 
 			Thread Stream_C_Wtemp_Thread = new Thread(Stream_C_Wtemp);
 			Thread Stream_TG_temp_Thread = new Thread(Stream_TG_temp);
 			Thread Stream_G_temp_Thread = new Thread(Stream_G_temp);
-			/*
 			Thread Stream_P_temp_Thread = new Thread(Stream_P_temp);
 			Thread Stream_E_temp_Thread = new Thread(Stream_E_temp);
 			Thread Stream_PowerOutput_Thread = new Thread(Stream_PowerOutput);
@@ -545,19 +540,16 @@ public class Example {
 			Thread Stream_Conv_temp_Thread = new Thread(Stream_Conv_temp);
 			Thread Stream_R_speed_Thread = new Thread(Stream_R_speed);
 			Thread Stream_R_Pangle_Thread = new Thread(Stream_R_Pangle);
-			*/
 
 			//Register new query in the engine
-			/*
+			
 			CsparqlQueryResultProxy c_S1 = engine.registerQuery(queryS1, false);
 			CsparqlQueryResultProxy c_S2 = engine.registerQuery(queryS2, false);
 			CsparqlQueryResultProxy c_S3 = engine.registerQuery(queryS3, false);
 			CsparqlQueryResultProxy c_S4 = engine.registerQuery(queryS4, false);
 			CsparqlQueryResultProxy c_S5 = engine.registerQuery(queryS5, false);
-			*/
-			//CsparqlQueryResultProxy c_S6 = engine.registerQuery(queryS6, false);
+			CsparqlQueryResultProxy c_S6 = engine.registerQuery(queryS6, false);
 			CsparqlQueryResultProxy c_S7 = engine.registerQuery(queryS7, false);
-			/*
 			CsparqlQueryResultProxy c_S8 = engine.registerQuery(queryS8, false);
 			CsparqlQueryResultProxy c_S9 = engine.registerQuery(queryS9, false);
 			CsparqlQueryResultProxy c_S10 = engine.registerQuery(queryS10, false);
@@ -565,33 +557,29 @@ public class Example {
 			CsparqlQueryResultProxy c_S12 = engine.registerQuery(queryS12, false);
 			CsparqlQueryResultProxy c_S13 = engine.registerQuery(queryS13, false);
 			CsparqlQueryResultProxy c_S14 = engine.registerQuery(queryS14, false);
-			*/
+
 
 			//Attach a result consumer to the query result proxy to print the results on the console
-			/*
-			c_S1.addObserver(new ConsoleFormatter("S1 DETECTED",ns,ontology,factory));	
-			c_S2.addObserver(new ConsoleFormatter("S2 DETECTED",ns,ontology,factory));	
-			c_S3.addObserver(new ConsoleFormatter("S3 DETECTED",ns,ontology,factory));	
-			c_S4.addObserver(new ConsoleFormatter("S4 DETECTED",ns,ontology,factory));	
-			c_S5.addObserver(new ConsoleFormatter("S5 DETECTED",ns,ontology,factory));	
-			*/
-			//c_S6.addObserver(new ConsoleFormatter("S6",ns,ontology,factory));	
+			
+			c_S1.addObserver(new ConsoleFormatter("S1",ns,ontology,factory));	
+			c_S2.addObserver(new ConsoleFormatter("S2",ns,ontology,factory));	
+			c_S3.addObserver(new ConsoleFormatter("S3",ns,ontology,factory));	
+			c_S4.addObserver(new ConsoleFormatter("S4",ns,ontology,factory));	
+			c_S5.addObserver(new ConsoleFormatter("S5",ns,ontology,factory));	
+			c_S6.addObserver(new ConsoleFormatter("S6",ns,ontology,factory));	
 			c_S7.addObserver(new ConsoleFormatter("S7",ns,ontology,factory));	
-			/*
-			c_S8.addObserver(new ConsoleFormatter("S8 DETECTED",ns,ontology,factory));	
-			c_S9.addObserver(new ConsoleFormatter("S9 DETECTED",ns,ontology,factory));	
-			c_S10.addObserver(new ConsoleFormatter("S10 DETECTED",ns,ontology,factory));	
-			c_S11.addObserver(new ConsoleFormatter("S11 DETECTED",ns,ontology,factory));	
-			c_S12.addObserver(new ConsoleFormatter("S12 DETECTED",ns,ontology,factory));	
-			c_S13.addObserver(new ConsoleFormatter("S13 DETECTED",ns,ontology,factory));	
-			c_S14.addObserver(new ConsoleFormatter("S14 DETECTED",ns,ontology,factory));	
-			*/
+			c_S8.addObserver(new ConsoleFormatter("S8",ns,ontology,factory));	
+			c_S9.addObserver(new ConsoleFormatter("S9",ns,ontology,factory));	
+			c_S10.addObserver(new ConsoleFormatter("S10",ns,ontology,factory));	
+			c_S11.addObserver(new ConsoleFormatter("S11",ns,ontology,factory));	
+			c_S12.addObserver(new ConsoleFormatter("S12",ns,ontology,factory));	
+			c_S13.addObserver(new ConsoleFormatter("S13",ns,ontology,factory));	
+			c_S14.addObserver(new ConsoleFormatter("S14",ns,ontology,factory));	
 
 			//Start streaming data
 			Stream_C_Wtemp_Thread.start();
 			Stream_TG_temp_Thread.start();
 			Stream_G_temp_Thread.start();
-			/*
 			Stream_P_temp_Thread.start();
 			Stream_E_temp_Thread.start();
 			Stream_PowerOutput_Thread.start();
@@ -604,7 +592,6 @@ public class Example {
 			Stream_Conv_temp_Thread.start();
 			Stream_R_speed_Thread.start();
 			Stream_R_Pangle_Thread.start();
-			*/
 
 			//engine.updateReasoner(c.getSparqlQueryId(), 
 			//CsparqlUtils.fileToString("examples_files/rdfs.rules"), 
