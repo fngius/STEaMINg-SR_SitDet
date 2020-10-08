@@ -13,7 +13,6 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.logging.XMLFormatter;
 
-
 import org.apache.jena.atlas.json.io.parser.JSONParser;
 import org.apache.jena.riot.RDFFormat;
 import org.apache.log4j.PropertyConfigurator;
@@ -48,6 +47,8 @@ import org.semanticweb.owlapi.util.InferredSubDataPropertyAxiomGenerator;
 import org.semanticweb.owlapi.util.InferredSubObjectPropertyAxiomGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.swrlapi.core.SWRLRuleEngine;
+import org.swrlapi.factory.SWRLAPIFactory;
 
 import com.hp.hpl.jena.sparql.engine.binding.Binding;
 import com.hp.hpl.jena.vocabulary.RDF;
@@ -86,7 +87,6 @@ public class Example {
 			//Start the thread that put the triples in the engine
 			//rfsThread.start();
 
-
 			//Create csparql engine instance
 			CsparqlEngineImpl engine = new CsparqlEngineImpl();
 			//Initialize the engine instance
@@ -102,6 +102,9 @@ public class Example {
 			String ontologyURI = "http://semanticweb.org/STEaMINg/ContextOntology-COInd4";
 			String ns = ontologyURI + "#";
 			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(fileOntology));
+			
+			// create SWRL engines
+			SWRLRuleEngine ruleEngine = SWRLAPIFactory.createSWRLRuleEngine(ontology);
 
 			String queryS1 = "REGISTER QUERY S1detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
@@ -273,9 +276,12 @@ public class Example {
 			+ " :S_G_temp  :madeObservation ?o3 ."
 			+ " ?o3        :hasSimpleResult ?v3 ."
 			+ " FILTER ( "
-			+ "		?v1 > 60.0 && "
-			+ "		?v2 < 35.0 && "
-			+ "		?v3 > 45.0 ) . "
+			+ "		?v1 > 1.0 && "
+			+ "		?v2 > 1.0 && "
+			+ "		?v3 > 1.0 ) . "
+			//+ "		?v1 > 60.0 && "
+			//+ "		?v2 < 35.0 && "
+			//+ "		?v3 > 45.0 ) . "
 			+ "} ";
 
 		String queryS7 = "REGISTER QUERY S7detection AS "
@@ -551,20 +557,20 @@ public class Example {
 
 
 			//Attach a result consumer to the query result proxy to print the results on the console
-			c_S1.addObserver(new ConsoleFormatter("S1",ns,ontology,factory));	
-			c_S2.addObserver(new ConsoleFormatter("S2",ns,ontology,factory));	
-			c_S3.addObserver(new ConsoleFormatter("S3",ns,ontology,factory));	
-			c_S4.addObserver(new ConsoleFormatter("S4",ns,ontology,factory));	
-			c_S5.addObserver(new ConsoleFormatter("S5",ns,ontology,factory));	
-			c_S6.addObserver(new ConsoleFormatter("S6",ns,ontology,factory));	
-			c_S7.addObserver(new ConsoleFormatter("S7",ns,ontology,factory));	
-			c_S8.addObserver(new ConsoleFormatter("S8",ns,ontology,factory));	
-			c_S9.addObserver(new ConsoleFormatter("S9",ns,ontology,factory));	
-			c_S10.addObserver(new ConsoleFormatter("S10",ns,ontology,factory));	
-			c_S11.addObserver(new ConsoleFormatter("S11",ns,ontology,factory));	
-			c_S12.addObserver(new ConsoleFormatter("S12",ns,ontology,factory));	
-			c_S13.addObserver(new ConsoleFormatter("S13",ns,ontology,factory));	
-			c_S14.addObserver(new ConsoleFormatter("S14",ns,ontology,factory));	
+			c_S1.addObserver(new ConsoleFormatter(ruleEngine,"S1",ns,ontology,factory));	
+			c_S2.addObserver(new ConsoleFormatter(ruleEngine,"S2",ns,ontology,factory));	
+			c_S3.addObserver(new ConsoleFormatter(ruleEngine,"S3",ns,ontology,factory));	
+			c_S4.addObserver(new ConsoleFormatter(ruleEngine,"S4",ns,ontology,factory));	
+			c_S5.addObserver(new ConsoleFormatter(ruleEngine,"S5",ns,ontology,factory));	
+			c_S6.addObserver(new ConsoleFormatter(ruleEngine,"S6",ns,ontology,factory));	
+			c_S7.addObserver(new ConsoleFormatter(ruleEngine,"S7",ns,ontology,factory));	
+			c_S8.addObserver(new ConsoleFormatter(ruleEngine,"S8",ns,ontology,factory));	
+			c_S9.addObserver(new ConsoleFormatter(ruleEngine,"S9",ns,ontology,factory));	
+			c_S10.addObserver(new ConsoleFormatter(ruleEngine,"S10",ns,ontology,factory));	
+			c_S11.addObserver(new ConsoleFormatter(ruleEngine,"S11",ns,ontology,factory));	
+			c_S12.addObserver(new ConsoleFormatter(ruleEngine,"S12",ns,ontology,factory));	
+			c_S13.addObserver(new ConsoleFormatter(ruleEngine,"S13",ns,ontology,factory));	
+			c_S14.addObserver(new ConsoleFormatter(ruleEngine,"S14",ns,ontology,factory));	
 
 			//Start streaming data
 			Stream_C_Wtemp_Thread.start();
