@@ -33,8 +33,6 @@ public class ConsoleFormatter extends ResultFormatter {
     @Override
     public void update(Observable o, Object arg) {
       
-      //private int sitIndex = 0;
-
       RDFTable rdfTable = (RDFTable)arg;
       System.out.println();
       
@@ -78,22 +76,13 @@ public class ConsoleFormatter extends ResultFormatter {
       });
       System.out.println();
       System.out.println();
-      //sitIndex++;
     }
-    //for (final RDFTuple t : res) {
-		//	System.out.println(t.toString());
-		//}
-		//System.out.println(); 
+    /*
+    for (final RDFTuple t : res) {
+			System.out.println(t.toString());
+		}
+    System.out.println(); 
+    */ 
     }
+
 }
-/*
-public void update(Observable o, Object arg) {
-  final RDFTable rdfTable = (RDFTable) arg;
-  if (rdfTable.size()==0)
-    System.out.println("NO RESULT!!!");
-  else {
-    rdfTable.stream().forEach((t) -> {System.out.println(t.get(0) + " ZZZ ");});
-    i++;
-  }
-}
-*/
