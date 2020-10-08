@@ -97,7 +97,12 @@ public class Example {
 			engine.putStaticNamedModel("http://streamreasoning.org/ContextOntology-COInd4",CsparqlUtils.serializeRDFFile("/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl"));
 			
 			String fileOntology = "/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl";
-			
+			OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+			OWLDataFactory factory = manager.getOWLDataFactory();
+			String ontologyURI = "http://semanticweb.org/STEaMINg/ContextOntology-COInd4";
+			String ns = ontologyURI + "#";
+			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(fileOntology));
+
 			String queryS1 = "REGISTER QUERY S1detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
@@ -110,7 +115,7 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m           :isPartOf        ?pl ."
 			+ " ?m           sosa:hosts       sosa:S_G_current ." 
-			+	" :S_G_current :madeObservation ?o1 ."
+			+ " :S_G_current :madeObservation ?o1 ."
 			+ " ?o1          :hasSimpleResult ?v1 ."
 			+ " ?m           sosa:hosts       sosa:S_C_temp ."
 			+ " :S_C_temp    :madeObservation ?o2 ."
@@ -140,7 +145,7 @@ public class Example {
 		+ "WHERE { "
 		+ " ?m           :isPartOf        ?pl ."
 		+ " ?m           sosa:hosts       sosa:S_G_current ." 
-		+	" :S_G_current :madeObservation ?o1 ."
+		+ " :S_G_current :madeObservation ?o1 ."
 		+ " ?o1          :hasSimpleResult ?v1 ."
 		+ " ?m           sosa:hosts       sosa:S_C_temp ."
 		+ " :S_C_temp    :madeObservation ?o2 ."
@@ -170,16 +175,16 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m           :isPartOf        ?pl ."
 			+ " ?m           sosa:hosts       sosa:S_P_temp ." 
-			+	" :S_P_temp    :madeObservation ?o1 ."
+			+ " :S_P_temp    :madeObservation ?o1 ."
 			+ " ?o1          :hasSimpleResult ?v1 ."
 			+ " ?m           sosa:hosts       sosa:S_GB_temp ." 
-			+	" :S_GB_temp   :madeObservation ?o2 ."
+			+ " :S_GB_temp   :madeObservation ?o2 ."
 			+ " ?o2          :hasSimpleResult ?v2 ."
 			+ " ?m           sosa:hosts       sosa:S_G_speed ." 
-			+	" :S_G_speed   :madeObservation ?o3 ."
+			+ " :S_G_speed   :madeObservation ?o3 ."
 			+ " ?o3          :hasSimpleResult ?v3 ."
 			+ " ?m           sosa:hosts       sosa:S_E_temp ." 
-			+	" :S_E_temp    :madeObservation ?o4 ."
+			+ " :S_E_temp    :madeObservation ?o4 ."
 			+ " ?o4          :hasSimpleResult ?v4 ."
 			+ " FILTER ( "
 			+ "		?v1 < 35.0   && "
@@ -200,16 +205,16 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m           :isPartOf        ?pl ."
 			+ " ?m           sosa:hosts       sosa:S_P_temp ." 
-			+	" :S_P_temp    :madeObservation ?o1 ."
+			+ " :S_P_temp    :madeObservation ?o1 ."
 			+ " ?o1          :hasSimpleResult ?v1 ."
 			+ " ?m           sosa:hosts       sosa:S_GB_temp ." 
-			+	" :S_GB_temp   :madeObservation ?o2 ."
+			+ " :S_GB_temp   :madeObservation ?o2 ."
 			+ " ?o2          :hasSimpleResult ?v2 ."
 			+ " ?m           sosa:hosts       sosa:S_G_speed ." 
-			+	" :S_G_speed   :madeObservation ?o3 ."
+			+ " :S_G_speed   :madeObservation ?o3 ."
 			+ " ?o3          :hasSimpleResult ?v3 ."
 			+ " ?m           sosa:hosts       sosa:S_E_temp ." 
-			+	" :S_E_temp    :madeObservation ?o4 ."
+			+ " :S_E_temp    :madeObservation ?o4 ."
 			+ " ?o4          :hasSimpleResult ?v4 ."
 			+ " FILTER ( "
 			+ "		?v1 < 35.0   && "
@@ -230,16 +235,16 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m           :isPartOf        ?pl ."
 			+ " ?m           sosa:hosts       sosa:S_P_temp ." 
-			+	" :S_P_temp    :madeObservation ?o1 ."
+			+ " :S_P_temp    :madeObservation ?o1 ."
 			+ " ?o1          :hasSimpleResult ?v1 ."
 			+ " ?m           sosa:hosts       sosa:S_GB_temp ." 
-			+	" :S_GB_temp   :madeObservation ?o2 ."
+			+ " :S_GB_temp   :madeObservation ?o2 ."
 			+ " ?o2          :hasSimpleResult ?v2 ."
 			+ " ?m           sosa:hosts       sosa:S_G_speed ." 
-			+	" :S_G_speed   :madeObservation ?o3 ."
+			+ " :S_G_speed   :madeObservation ?o3 ."
 			+ " ?o3          :hasSimpleResult ?v3 ."
 			+ " ?m           sosa:hosts       sosa:S_E_temp ." 
-			+	" :S_E_temp    :madeObservation ?o4 ."
+			+ " :S_E_temp    :madeObservation ?o4 ."
 			+ " ?o4          :hasSimpleResult ?v4 ."
 			+ " FILTER ( "
 			+ "		?v1 > 40.0   && "
@@ -259,7 +264,7 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m         :isPartOf        ?pl ."
 			+ " ?m         sosa:hosts       sosa:S_C_Wtemp ." 
-			+	" :S_C_Wtemp :madeObservation ?o1 ."
+			+ " :S_C_Wtemp :madeObservation ?o1 ."
 			+ " ?o1        :hasSimpleResult ?v1 ."
 			+ " ?m         sosa:hosts       sosa:S_TG_temp ."
 			+ " :S_TG_temp :madeObservation ?o2 ."
@@ -284,7 +289,7 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m         :isPartOf        ?pl ."
 			+ " ?m         sosa:hosts       sosa:S_C_Wtemp ." 
-			+	" :S_C_Wtemp :madeObservation ?o1 ."
+			+ " :S_C_Wtemp :madeObservation ?o1 ."
 			+ " ?o1        :hasSimpleResult ?v1 ."
 			+ " ?m         sosa:hosts       sosa:S_TG_temp ."
 			+ " :S_TG_temp :madeObservation ?o2 ."
@@ -309,7 +314,7 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m            :isPartOf        ?pl ."
 			+ " ?m            sosa:hosts       sosa:S_P_temp ." 
-			+	" :S_P_temp     :madeObservation ?o1 ."
+			+ " :S_P_temp     :madeObservation ?o1 ."
 			+ " ?o1           :hasSimpleResult ?v1 ."
 			+ " ?m            sosa:hosts       sosa:S_TG_temp ."
 			+ " :S_TG_temp    :madeObservation ?o2 ."
@@ -334,7 +339,7 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m            :isPartOf        ?pl ."
 			+ " ?m            sosa:hosts       sosa:S_P_temp ." 
-			+	" :S_P_temp     :madeObservation ?o1 ."
+			+ " :S_P_temp     :madeObservation ?o1 ."
 			+ " ?o1           :hasSimpleResult ?v1 ."
 			+ " ?m            sosa:hosts       sosa:S_TG_temp ."
 			+ " :S_TG_temp    :madeObservation ?o2 ."
@@ -360,7 +365,7 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m            :isPartOf        ?pl ."
 			+ " ?m            sosa:hosts       sosa:S_C_Wtemp ." 
-			+	" :S_C_Wtemp    :madeObservation ?o1 ."
+			+ " :S_C_Wtemp    :madeObservation ?o1 ."
 			+ " ?o1           :hasSimpleResult ?v1 ."
 			+ " ?m            sosa:hosts       sosa:S_TG_temp ."
 			+ " :S_TG_temp    :madeObservation ?o2 ."
@@ -389,7 +394,7 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m             :isPartOf        ?pl ."
 			+ " ?m             sosa:hosts       sosa:S_PowerOutput ." 
-			+	" :S_PowerOutput :madeObservation ?o1 ."
+			+ " :S_PowerOutput :madeObservation ?o1 ."
 			+ " ?o1            :hasSimpleResult ?v1 ."
 			+ " ?m             sosa:hosts       sosa:S_R_speed ."
 			+ " :S_R_speed     :madeObservation ?o2 ."
@@ -414,7 +419,7 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m             :isPartOf        ?pl ."
 			+ " ?m             sosa:hosts       sosa:S_PowerOutput ." 
-			+	" :S_PowerOutput :madeObservation ?o1 ."
+			+ " :S_PowerOutput :madeObservation ?o1 ."
 			+ " ?o1            :hasSimpleResult ?v1 ."
 			+ " ?m             sosa:hosts       sosa:S_R_speed ."
 			+ " :S_R_speed     :madeObservation ?o2 ."
@@ -439,7 +444,7 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m             :isPartOf        ?pl ."
 			+ " ?m             sosa:hosts       sosa:S_PowerOutput ." 
-			+	" :S_PowerOutput :madeObservation ?o1 ."
+			+ " :S_PowerOutput :madeObservation ?o1 ."
 			+ " ?o1            :hasSimpleResult ?v1 ."
 			+ " ?m             sosa:hosts       sosa:S_R_speed ."
 			+ " :S_R_speed     :madeObservation ?o2 ."
@@ -464,7 +469,7 @@ public class Example {
 			+ "WHERE { "
 			+ " ?m             :isPartOf        ?pl ."
 			+ " ?m             sosa:hosts       sosa:S_PowerOutput ." 
-			+	" :S_PowerOutput :madeObservation ?o1 ."
+			+ " :S_PowerOutput :madeObservation ?o1 ."
 			+ " ?o1            :hasSimpleResult ?v1 ."
 			+ " ?m             sosa:hosts       sosa:S_R_speed ."
 			+ " :S_R_speed     :madeObservation ?o2 ."
@@ -478,12 +483,6 @@ public class Example {
 			+ "		?v3 < 5.0 ) . "
 			+ "} ";
 
-
-			OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-			OWLDataFactory factory = manager.getOWLDataFactory();
-			String ontologyURI = "http://semanticweb.org/STEaMINg/ContextOntology-COInd4";
-			String ns = ontologyURI + "#";
-			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(fileOntology));
 			
 			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_S_C_Wtemp",ns,"C_Wtemp",2,50,90,ontology,factory);
 			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_S_TG_temp",ns,"TG_temp",9,30,40,ontology,factory);

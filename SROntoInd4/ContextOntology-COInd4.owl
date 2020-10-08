@@ -165,7 +165,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-0> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-0>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "89^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "76^^http://www.w3.org/2001/XMLSchema#integer",
+    "89^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_Wtemp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-1
@@ -173,7 +174,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-1> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-1>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "90^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "69^^http://www.w3.org/2001/XMLSchema#integer",
+    "90^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_Wtemp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-10
@@ -270,7 +272,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-2>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "54^^http://www.w3.org/2001/XMLSchema#integer",
-    "86^^http://www.w3.org/2001/XMLSchema#integer";
+    "86^^http://www.w3.org/2001/XMLSchema#integer", "87^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_Wtemp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-20
@@ -310,7 +312,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-3> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-3>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "79^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "79^^http://www.w3.org/2001/XMLSchema#integer",
+    "90^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_Wtemp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-4
@@ -328,7 +331,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-5>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "50^^http://www.w3.org/2001/XMLSchema#integer",
-    "52^^http://www.w3.org/2001/XMLSchema#integer";
+    "52^^http://www.w3.org/2001/XMLSchema#integer", "83^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_Wtemp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-6
@@ -382,7 +385,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_C_temp-0>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "39^^http://www.w3.org/2001/XMLSchema#integer",
-    "47^^http://www.w3.org/2001/XMLSchema#integer";
+    "40^^http://www.w3.org/2001/XMLSchema#integer", "47^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_temp-Obs-1
@@ -391,7 +394,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_C_temp-1>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "31^^http://www.w3.org/2001/XMLSchema#integer",
-    "33^^http://www.w3.org/2001/XMLSchema#integer";
+    "33^^http://www.w3.org/2001/XMLSchema#integer", "40^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_temp-Obs-2
@@ -449,8 +452,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_Conv_temp-Obs-0> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_Conv_temp-0>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "81^^http://www.w3.org/2001/XMLSchema#integer",
-    "83^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "60^^http://www.w3.org/2001/XMLSchema#integer",
+    "81^^http://www.w3.org/2001/XMLSchema#integer", "83^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Conv_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_Conv_temp-Obs-1
@@ -459,7 +462,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_Conv_temp-1>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "71^^http://www.w3.org/2001/XMLSchema#integer",
-    "75^^http://www.w3.org/2001/XMLSchema#integer";
+    "72^^http://www.w3.org/2001/XMLSchema#integer", "75^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Conv_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_Conv_temp-Obs-2
@@ -509,8 +512,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_E_temp-Obs-0> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_E_temp-0>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "18^^http://www.w3.org/2001/XMLSchema#integer",
-    "20^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "15^^http://www.w3.org/2001/XMLSchema#integer",
+    "18^^http://www.w3.org/2001/XMLSchema#integer", "20^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#E_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_E_temp-Obs-1
@@ -519,7 +522,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_E_temp-1>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "15^^http://www.w3.org/2001/XMLSchema#integer",
-    "29^^http://www.w3.org/2001/XMLSchema#integer";
+    "20^^http://www.w3.org/2001/XMLSchema#integer", "29^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#E_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_E_temp-Obs-2
@@ -571,7 +574,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_GB_temp-0>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "33^^http://www.w3.org/2001/XMLSchema#integer",
-    "41^^http://www.w3.org/2001/XMLSchema#integer";
+    "41^^http://www.w3.org/2001/XMLSchema#integer", "49^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#GB_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_GB_temp-Obs-1
@@ -580,7 +583,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_GB_temp-1>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "48^^http://www.w3.org/2001/XMLSchema#integer",
-    "65^^http://www.w3.org/2001/XMLSchema#integer";
+    "52^^http://www.w3.org/2001/XMLSchema#integer", "65^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#GB_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_GB_temp-Obs-2
@@ -632,7 +635,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_G_current-0>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "843^^http://www.w3.org/2001/XMLSchema#integer",
-    "962^^http://www.w3.org/2001/XMLSchema#integer";
+    "936^^http://www.w3.org/2001/XMLSchema#integer", "962^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_current> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_current-Obs-1
@@ -641,7 +644,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_G_current-1>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "728^^http://www.w3.org/2001/XMLSchema#integer",
-    "770^^http://www.w3.org/2001/XMLSchema#integer";
+    "770^^http://www.w3.org/2001/XMLSchema#integer", "902^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_current> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_current-Obs-2
@@ -692,8 +695,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_speed-Obs-0> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_G_speed-0>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "544^^http://www.w3.org/2001/XMLSchema#integer",
-    "583^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "542^^http://www.w3.org/2001/XMLSchema#integer",
+    "544^^http://www.w3.org/2001/XMLSchema#integer", "583^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_speed> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_speed-Obs-1
@@ -702,7 +705,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_G_speed-1>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "489^^http://www.w3.org/2001/XMLSchema#integer",
-    "580^^http://www.w3.org/2001/XMLSchema#integer";
+    "502^^http://www.w3.org/2001/XMLSchema#integer", "580^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_speed> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_speed-Obs-2
@@ -753,7 +756,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_temp-Obs-0> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_G_temp-0>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "50^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "48^^http://www.w3.org/2001/XMLSchema#integer",
+    "50^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_temp-Obs-1
@@ -814,7 +818,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_OilTemp-0>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "33^^http://www.w3.org/2001/XMLSchema#integer",
-    "60^^http://www.w3.org/2001/XMLSchema#integer";
+    "35^^http://www.w3.org/2001/XMLSchema#integer", "60^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#OilTemp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_OilTemp-Obs-1
@@ -823,7 +827,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_OilTemp-1>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "32^^http://www.w3.org/2001/XMLSchema#integer",
-    "61^^http://www.w3.org/2001/XMLSchema#integer";
+    "59^^http://www.w3.org/2001/XMLSchema#integer", "61^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#OilTemp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_OilTemp-Obs-2
@@ -874,7 +878,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_P_temp-0>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "26^^http://www.w3.org/2001/XMLSchema#integer",
-    "37^^http://www.w3.org/2001/XMLSchema#integer";
+    "36^^http://www.w3.org/2001/XMLSchema#integer", "37^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#P_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_P_temp-Obs-1
@@ -883,7 +887,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_P_temp-1>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "27^^http://www.w3.org/2001/XMLSchema#integer",
-    "43^^http://www.w3.org/2001/XMLSchema#integer";
+    "43^^http://www.w3.org/2001/XMLSchema#integer", "48^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#P_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_P_temp-Obs-2
@@ -934,8 +938,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_PowerOutput-Obs-0> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_PowerOutput-0>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "1293^^http://www.w3.org/2001/XMLSchema#integer",
-    "2046^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "1059^^http://www.w3.org/2001/XMLSchema#integer",
+    "1293^^http://www.w3.org/2001/XMLSchema#integer", "2046^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PowerOutput> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_PowerOutput-Obs-1
@@ -943,8 +947,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_PowerOutput-Obs-1> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_PowerOutput-1>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "843^^http://www.w3.org/2001/XMLSchema#integer",
-    "957^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "158^^http://www.w3.org/2001/XMLSchema#integer",
+    "843^^http://www.w3.org/2001/XMLSchema#integer", "957^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PowerOutput> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_PowerOutput-Obs-2
@@ -996,7 +1000,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_R_Pangle-0>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "4^^http://www.w3.org/2001/XMLSchema#integer",
-    "8^^http://www.w3.org/2001/XMLSchema#integer";
+    "5^^http://www.w3.org/2001/XMLSchema#integer", "8^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#R_Pangle> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_Pangle-Obs-1
@@ -1005,7 +1009,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_R_Pangle-1>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "10^^http://www.w3.org/2001/XMLSchema#integer",
-    "5^^http://www.w3.org/2001/XMLSchema#integer";
+    "4^^http://www.w3.org/2001/XMLSchema#integer", "5^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#R_Pangle> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_Pangle-Obs-2
@@ -1056,7 +1060,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_R_speed-0>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "101^^http://www.w3.org/2001/XMLSchema#integer",
-    "243^^http://www.w3.org/2001/XMLSchema#integer";
+    "113^^http://www.w3.org/2001/XMLSchema#integer", "243^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#R_speed> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_speed-Obs-1
@@ -1065,7 +1069,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_R_speed-1>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "114^^http://www.w3.org/2001/XMLSchema#integer",
-    "68^^http://www.w3.org/2001/XMLSchema#integer";
+    "123^^http://www.w3.org/2001/XMLSchema#integer", "68^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#R_speed> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_speed-Obs-2
@@ -1117,7 +1121,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_TG_temp-0>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "34^^http://www.w3.org/2001/XMLSchema#integer",
-    "36^^http://www.w3.org/2001/XMLSchema#integer";
+    "36^^http://www.w3.org/2001/XMLSchema#integer", "39^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#TG_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_TG_temp-Obs-1
@@ -1125,8 +1129,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_TG_temp-Obs-1> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_TG_temp-1>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "33^^http://www.w3.org/2001/XMLSchema#integer",
-    "37^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "32^^http://www.w3.org/2001/XMLSchema#integer",
+    "33^^http://www.w3.org/2001/XMLSchema#integer", "37^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#TG_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_TG_temp-Obs-2
@@ -1178,7 +1182,7 @@ _:genid1 a owl:Ontology .
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_T_temp-0>;
   <http://www.w3.org/ns/sosa/hasSimpleResult> "36^^http://www.w3.org/2001/XMLSchema#integer",
-    "55^^http://www.w3.org/2001/XMLSchema#integer";
+    "43^^http://www.w3.org/2001/XMLSchema#integer", "55^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#T_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_T_temp-Obs-1
@@ -1186,8 +1190,8 @@ _:genid1 a owl:Ontology .
 <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_T_temp-Obs-1> a owl:NamedIndividual,
     <http://www.w3.org/ns/sosa/Observation>;
   <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasTime> <http://www.w3.org/2006/time#t-obs-S_T_temp-1>;
-  <http://www.w3.org/ns/sosa/hasSimpleResult> "43^^http://www.w3.org/2001/XMLSchema#integer",
-    "48^^http://www.w3.org/2001/XMLSchema#integer";
+  <http://www.w3.org/ns/sosa/hasSimpleResult> "39^^http://www.w3.org/2001/XMLSchema#integer",
+    "43^^http://www.w3.org/2001/XMLSchema#integer", "48^^http://www.w3.org/2001/XMLSchema#integer";
   <http://www.w3.org/ns/sosa/observedProperty> <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#T_temp> .
 # 
 # http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_T_temp-Obs-2
@@ -1238,13 +1242,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.481^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.989^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.989^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_C_Wtemp-1
 
 <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:00.434^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:03.433^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:03.433^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:52.396^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_C_Wtemp-10
 
@@ -1308,7 +1312,7 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-2> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:02.636^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:05.717^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:05.717^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:54.611^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_C_Wtemp-20
 
@@ -1334,19 +1338,19 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-3> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:04.883^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:07.944^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:07.944^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:56.876^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_C_Wtemp-4
 
 <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-4> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.104^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.129^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.129^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.07^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_C_Wtemp-5
 
 <http://www.w3.org/2006/time#t-obs-S_C_Wtemp-5> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:09.445^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:12.361^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:12.361^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:25:03.023^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_C_Wtemp-6
 
@@ -1376,13 +1380,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_C_temp-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.481^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_C_temp-1
 
 <http://www.w3.org/2006/time#t-obs-S_C_temp-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.338^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.436^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.436^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.438^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_C_temp-2
 
@@ -1415,13 +1419,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_Conv_temp-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.485^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_Conv_temp-1
 
 <http://www.w3.org/2006/time#t-obs-S_Conv_temp-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.444^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.441^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.441^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.438^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_Conv_temp-2
 
@@ -1449,13 +1453,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_E_temp-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.485^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_E_temp-1
 
 <http://www.w3.org/2006/time#t-obs-S_E_temp-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.445^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.441^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.441^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.438^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_E_temp-2
 
@@ -1483,13 +1487,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_GB_temp-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.485^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_GB_temp-1
 
 <http://www.w3.org/2006/time#t-obs-S_GB_temp-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.444^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.367^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.367^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.469^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_GB_temp-2
 
@@ -1517,13 +1521,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_G_current-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.481^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_G_current-1
 
 <http://www.w3.org/2006/time#t-obs-S_G_current-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.444^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.436^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.436^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.438^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_G_current-2
 
@@ -1551,13 +1555,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_G_speed-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.485^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_G_speed-1
 
 <http://www.w3.org/2006/time#t-obs-S_G_speed-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.445^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.436^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.436^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.331^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_G_speed-2
 
@@ -1585,13 +1589,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_G_temp-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.482^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_G_temp-1
 
 <http://www.w3.org/2006/time#t-obs-S_G_temp-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.41^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.441^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.441^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.469^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_G_temp-2
 
@@ -1619,13 +1623,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_OilTemp-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.485^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_OilTemp-1
 
 <http://www.w3.org/2006/time#t-obs-S_OilTemp-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.41^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.436^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.436^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.438^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_OilTemp-2
 
@@ -1653,13 +1657,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_P_temp-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.486^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_P_temp-1
 
 <http://www.w3.org/2006/time#t-obs-S_P_temp-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.444^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.442^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.442^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.469^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_P_temp-2
 
@@ -1687,13 +1691,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_PowerOutput-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.481^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_PowerOutput-1
 
 <http://www.w3.org/2006/time#t-obs-S_PowerOutput-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.444^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.441^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.441^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.47^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_PowerOutput-2
 
@@ -1721,13 +1725,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_R_Pangle-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.481^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.989^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.989^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.16^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_R_Pangle-1
 
 <http://www.w3.org/2006/time#t-obs-S_R_Pangle-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.444^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.408^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.408^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.469^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_R_Pangle-2
 
@@ -1755,13 +1759,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_R_speed-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.485^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_R_speed-1
 
 <http://www.w3.org/2006/time#t-obs-S_R_speed-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.658^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.408^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.408^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.469^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_R_speed-2
 
@@ -1789,13 +1793,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_TG_temp-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.485^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_TG_temp-1
 
 <http://www.w3.org/2006/time#t-obs-S_TG_temp-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.445^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.436^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.436^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.354^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_TG_temp-2
 
@@ -1823,13 +1827,13 @@ _:genid1 a owl:Ontology .
 
 <http://www.w3.org/2006/time#t-obs-S_T_temp-0> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:11:56.481^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:19:58.99^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:48.159^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_T_temp-1
 
 <http://www.w3.org/2006/time#t-obs-S_T_temp-1> a owl:NamedIndividual, <http://www.w3.org/2006/time#Instant>;
   <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2020-10-08 15:12:07.386^^http://www.w3.org/2001/XMLSchema#dateTimeStamp",
-    "2020-10-08 15:20:10.441^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
+    "2020-10-08 15:20:10.441^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", "2020-10-08 15:24:59.469^^http://www.w3.org/2001/XMLSchema#dateTimeStamp" .
 # 
 # http://www.w3.org/2006/time#t-obs-S_T_temp-2
 
