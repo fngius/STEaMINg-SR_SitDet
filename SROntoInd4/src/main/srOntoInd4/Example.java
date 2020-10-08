@@ -75,14 +75,14 @@ public class Example {
 			PropertyConfigurator.configure("log4j_configuration/csparql_readyToGoPack_log4j.properties");
 
 			//create a new instance of the api manager
-			//RSP_services_csparql_API api = new RSP_services_csparql_API("http://localhost:8175");
+			//RSP_services_csparql_API api = new RSP_services_csparql_API("http://localhost:port");
 			//Register new stream in the engine
 			//api.registerStream("http://streamreasoning.org/streams/rfs");
 			//Thread rfsThread = new Thread(rfs);
 			//Register new query in the engine
 			//String queryURI = api.registerQuery("IsInFs", queryBody);
 			//Attach a result consumer to the query result proxy to print the results on the console
-			//api.addObserver(queryURI, "http://localhost:8178/results");
+			//api.addObserver(queryURI, "http://localhost:port/results");
 			//Start the thread that put the triples in the engine
 			//rfsThread.start();
 
@@ -484,21 +484,21 @@ public class Example {
 			+ "} ";
 
 			
-			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_S_C_Wtemp",ns,"C_Wtemp",2,50,90,ontology,factory);
-			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_S_TG_temp",ns,"TG_temp",9,30,40,ontology,factory);
-			SensorsStreamer Stream_G_temp = new SensorsStreamer("Stream_S_G_temp",ns,"G_temp",9,40,50,ontology,factory);
-			SensorsStreamer Stream_P_temp = new SensorsStreamer("Stream_S_P_temp",ns,"P_temp",9,25,50,ontology,factory);
-			SensorsStreamer Stream_E_temp = new SensorsStreamer("Stream_S_E_temp",ns,"E_temp",9,15,30,ontology,factory);
-			SensorsStreamer Stream_PowerOutput = new SensorsStreamer("Stream_S_PowerOutput",ns,"PowerOutput",9,100,2100,ontology,factory);
-			SensorsStreamer Stream_G_current = new SensorsStreamer("Stream_S_G_current",ns,"G_current",9,700,1000,ontology,factory);
-			SensorsStreamer Stream_C_temp = new SensorsStreamer("Stream_S_C_temp",ns,"C_temp",9,30,50,ontology,factory);
-			SensorsStreamer Stream_T_temp = new SensorsStreamer("Stream_S_T_temp",ns,"T_temp",9,35,55,ontology,factory);
-			SensorsStreamer Stream_OilTemp = new SensorsStreamer("Stream_S_OilTemp",ns,"OilTemp",9,30,70,ontology,factory);
-			SensorsStreamer Stream_GB_temp = new SensorsStreamer("Stream_S_GB_temp",ns,"GB_temp",9,30,70,ontology,factory);
-			SensorsStreamer Stream_G_speed = new SensorsStreamer("Stream_S_G_speed",ns,"G_speed",9,400,600,ontology,factory);
-			SensorsStreamer Stream_Conv_temp = new SensorsStreamer("Stream_S_Conv_temp",ns,"Conv_temp",9,50,90,ontology,factory);
-			SensorsStreamer Stream_R_speed = new SensorsStreamer("Stream_S_R_speed",ns,"R_speed",9,50,300,ontology,factory);
-			SensorsStreamer Stream_R_Pangle = new SensorsStreamer("Stream_S_R_Pangle",ns,"R_Pangle",9,3,10,ontology,factory);
+			SensorsStreamer Stream_C_Wtemp = new SensorsStreamer("Stream_S_C_Wtemp",ns,"C_Wtemp",6,50,90,ontology,factory);
+			SensorsStreamer Stream_TG_temp = new SensorsStreamer("Stream_S_TG_temp",ns,"TG_temp",6,30,40,ontology,factory);
+			SensorsStreamer Stream_G_temp = new SensorsStreamer("Stream_S_G_temp",ns,"G_temp",6,40,50,ontology,factory);
+			SensorsStreamer Stream_P_temp = new SensorsStreamer("Stream_S_P_temp",ns,"P_temp",6,25,50,ontology,factory);
+			SensorsStreamer Stream_E_temp = new SensorsStreamer("Stream_S_E_temp",ns,"E_temp",6,15,30,ontology,factory);
+			SensorsStreamer Stream_PowerOutput = new SensorsStreamer("Stream_S_PowerOutput",ns,"PowerOutput",6,100,2100,ontology,factory);
+			SensorsStreamer Stream_G_current = new SensorsStreamer("Stream_S_G_current",ns,"G_current",6,700,1000,ontology,factory);
+			SensorsStreamer Stream_C_temp = new SensorsStreamer("Stream_S_C_temp",ns,"C_temp",6,30,50,ontology,factory);
+			SensorsStreamer Stream_T_temp = new SensorsStreamer("Stream_S_T_temp",ns,"T_temp",6,35,55,ontology,factory);
+			SensorsStreamer Stream_OilTemp = new SensorsStreamer("Stream_S_OilTemp",ns,"OilTemp",6,30,70,ontology,factory);
+			SensorsStreamer Stream_GB_temp = new SensorsStreamer("Stream_S_GB_temp",ns,"GB_temp",6,30,70,ontology,factory);
+			SensorsStreamer Stream_G_speed = new SensorsStreamer("Stream_S_G_speed",ns,"G_speed",6,400,600,ontology,factory);
+			SensorsStreamer Stream_Conv_temp = new SensorsStreamer("Stream_S_Conv_temp",ns,"Conv_temp",6,50,90,ontology,factory);
+			SensorsStreamer Stream_R_speed = new SensorsStreamer("Stream_S_R_speed",ns,"R_speed",6,50,300,ontology,factory);
+			SensorsStreamer Stream_R_Pangle = new SensorsStreamer("Stream_S_R_Pangle",ns,"R_Pangle",6,3,10,ontology,factory);
 
 			//Register new streams in the engine
 			engine.registerStream(Stream_C_Wtemp);

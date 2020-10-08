@@ -77,19 +77,19 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
 				//System.out.println(q);
 				//this.put(q);
 				RdfQuadruple q = new RdfQuadruple(baseUri + "S_" + prop, baseUri + "madeObservation", baseUri + "S_" + prop + "-Obs-" + observationIndex, System.currentTimeMillis());
-				System.out.println(q);
+				//System.out.println(q);
 				this.put(q);
 				q = new RdfQuadruple(baseUri + "S_" + prop + "-Obs-" + observationIndex, baseUri + "observedProperty", baseUri + prop, System.currentTimeMillis());
-				System.out.println(q);
+				//System.out.println(q);
 				this.put(q);
 				q = new RdfQuadruple(baseUri + "S_" + prop + "-Obs-" + observationIndex, baseUri + "hasSimpleResult", result + "^^http://www.w3.org/2001/XMLSchema#integer", System.currentTimeMillis());
-				System.out.println(q);
+				//System.out.println(q);
 				this.put(q);
 				q = new RdfQuadruple(baseUri + "S_" + prop + "-Obs-" + observationIndex, baseUri + "hasTime", baseUri + "t-obs-S_" + prop + "-"+ timeIndex, System.currentTimeMillis());
-				System.out.println(q);
+				//System.out.println(q);
 				this.put(q);
 				q = new RdfQuadruple(baseUri + "t-obs-S_" + prop + "-"+ timeIndex, baseUri + "inXSDDateTime", date + "^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", System.currentTimeMillis());
-				System.out.println(q);
+				//System.out.println(q);
 				this.put(q);
 				
 				OWLIndividual sensor = factory.getOWLNamedIndividual(IRI.create(ns,"S_" + prop));

@@ -37,7 +37,7 @@ public class ConsoleFormatter extends ResultFormatter {
       System.out.println();
       
       if (rdfTable.size()==0)
-        System.out.println("NO RESULT");
+        System.out.println(situationName + " NO DETECTED.");
       else {
         String ontologyURI = "http://semanticweb.org/STEaMINg/ContextOntology-COInd4";
         String ns = ontologyURI + "#";
