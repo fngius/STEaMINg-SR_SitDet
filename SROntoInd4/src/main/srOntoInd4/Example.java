@@ -17,6 +17,9 @@ import org.apache.jena.atlas.json.io.parser.JSONParser;
 import org.apache.jena.riot.RDFFormat;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.xerces.parsers.XML11Configurable;
+import org.semanticweb.HermiT.Configuration;
+import org.semanticweb.HermiT.Reasoner;
+import org.semanticweb.HermiT.Reasoner.ReasonerFactory;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAxiom;
@@ -49,6 +52,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.swrlapi.core.SWRLRuleEngine;
 import org.swrlapi.factory.SWRLAPIFactory;
+import org.swrlapi.sqwrl.SQWRLQueryEngine;
+import org.swrlapi.sqwrl.SQWRLResult;
 
 import com.hp.hpl.jena.sparql.engine.binding.Binding;
 import com.hp.hpl.jena.vocabulary.RDF;
@@ -96,15 +101,37 @@ public class Example {
 			// put static model
 			engine.putStaticNamedModel("http://streamreasoning.org/ContextOntology-COInd4",CsparqlUtils.serializeRDFFile("/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl"));
 			
-			String fileOntology = "/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl";
+			String fileOntology = "/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl";//ContextOntology-COInd4.owl";
 			OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 			OWLDataFactory factory = manager.getOWLDataFactory();
 			String ontologyURI = "http://semanticweb.org/STEaMINg/ContextOntology-COInd4";
 			String ns = ontologyURI + "#";
 			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(fileOntology));
 			
+			// Create SQWRL query engine using the SWRLAPI
+ 			//SQWRLQueryEngine queryEngine = SWRLAPIFactory.createSQWRLQueryEngine(ontology);
+
+ 			// Create and execute a SQWRL query using the SWRLAPI
+ 			//SQWRLResult result = queryEngine.runSQWRLQuery("q1","swrlb:add(?x, 2, 2) -> sqwrl:select(?x)");
+
+ 			// Process the SQWRL result
+ 			//if (result.next()) 
+	 		//System.out.println("Name: " + result.getLiteral("x").getInteger());
+	 
 			// create SWRL engines
-			SWRLRuleEngine ruleEngine = SWRLAPIFactory.createSWRLRuleEngine(ontology);
+			//SWRLRuleEngine ruleEngine = SWRLAPIFactory.createSWRLRuleEngine(ontology);
+			//ruleEngine.infer();
+			
+			//ReasonerFactory resfactory = new ReasonerFactory();
+			//Configuration configuration=new Configuration();
+			//configuration.throwInconsistentOntologyException=false;
+			//OWLReasoner reasoner = resfactory.createReasoner(ontology, configuration);
+
+			OWLReasonerFactory reasonerFactory = new ReasonerFactory();
+			OWLReasoner ruleEngine = reasonerFactory.createReasoner(ontology);
+			//System.out.println(ruleEngine.isConsistent());
+			//OWLReasonerFactory reasonerFactory = new ReasonerFactory();
+			//OWLReasoner ruleEngine = reasonerFactory.createReasoner(ontology);
 
 			String queryS1 = "REGISTER QUERY S1detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
