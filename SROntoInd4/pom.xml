@@ -94,6 +94,11 @@
   <version>1.4.3.517</version>
 </dependency>
 
+<dependency>
+    <groupId>com.github.ansell.pellet</groupId>
+    <artifactId>pellet-jena</artifactId>
+    <version>2.3.6-ansell</version>
+</dependency>
 	</dependencies>
 
 	<build>

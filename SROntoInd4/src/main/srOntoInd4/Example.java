@@ -17,6 +17,8 @@ import org.apache.jena.atlas.json.io.parser.JSONParser;
 import org.apache.jena.riot.RDFFormat;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.xerces.parsers.XML11Configurable;
+import org.mindswap.pellet.jena.PelletReasoner;
+import org.mindswap.pellet.jena.PelletReasonerFactory;
 import org.semanticweb.HermiT.Configuration;
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.HermiT.Reasoner.ReasonerFactory;
@@ -121,18 +123,10 @@ public class Example {
 			// create SWRL engines
 			//SWRLRuleEngine ruleEngine = SWRLAPIFactory.createSWRLRuleEngine(ontology);
 			//ruleEngine.infer();
-			
-			//ReasonerFactory resfactory = new ReasonerFactory();
-			//Configuration configuration=new Configuration();
-			//configuration.throwInconsistentOntologyException=false;
-			//OWLReasoner reasoner = resfactory.createReasoner(ontology, configuration);
 
 			OWLReasonerFactory reasonerFactory = new ReasonerFactory();
 			OWLReasoner ruleEngine = reasonerFactory.createReasoner(ontology);
-			//System.out.println(ruleEngine.isConsistent());
-			//OWLReasonerFactory reasonerFactory = new ReasonerFactory();
-			//OWLReasoner ruleEngine = reasonerFactory.createReasoner(ontology);
-
+		
 			String queryS1 = "REGISTER QUERY S1detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
@@ -584,20 +578,20 @@ public class Example {
 
 
 			//Attach a result consumer to the query result proxy to print the results on the console
-			c_S1.addObserver(new ConsoleFormatter(ruleEngine,"S1",ns,ontology,factory));	
-			c_S2.addObserver(new ConsoleFormatter(ruleEngine,"S2",ns,ontology,factory));	
-			c_S3.addObserver(new ConsoleFormatter(ruleEngine,"S3",ns,ontology,factory));	
-			c_S4.addObserver(new ConsoleFormatter(ruleEngine,"S4",ns,ontology,factory));	
-			c_S5.addObserver(new ConsoleFormatter(ruleEngine,"S5",ns,ontology,factory));	
-			c_S6.addObserver(new ConsoleFormatter(ruleEngine,"S6",ns,ontology,factory));	
-			c_S7.addObserver(new ConsoleFormatter(ruleEngine,"S7",ns,ontology,factory));	
-			c_S8.addObserver(new ConsoleFormatter(ruleEngine,"S8",ns,ontology,factory));	
-			c_S9.addObserver(new ConsoleFormatter(ruleEngine,"S9",ns,ontology,factory));	
-			c_S10.addObserver(new ConsoleFormatter(ruleEngine,"S10",ns,ontology,factory));	
-			c_S11.addObserver(new ConsoleFormatter(ruleEngine,"S11",ns,ontology,factory));	
-			c_S12.addObserver(new ConsoleFormatter(ruleEngine,"S12",ns,ontology,factory));	
-			c_S13.addObserver(new ConsoleFormatter(ruleEngine,"S13",ns,ontology,factory));	
-			c_S14.addObserver(new ConsoleFormatter(ruleEngine,"S14",ns,ontology,factory));	
+			c_S1.addObserver(new ConsoleFormatter(ruleEngine,"S1",ns,ontology,factory,manager));	
+			c_S2.addObserver(new ConsoleFormatter(ruleEngine,"S2",ns,ontology,factory,manager));	
+			c_S3.addObserver(new ConsoleFormatter(ruleEngine,"S3",ns,ontology,factory,manager));	
+			c_S4.addObserver(new ConsoleFormatter(ruleEngine,"S4",ns,ontology,factory,manager));	
+			c_S5.addObserver(new ConsoleFormatter(ruleEngine,"S5",ns,ontology,factory,manager));	
+			c_S6.addObserver(new ConsoleFormatter(ruleEngine,"S6",ns,ontology,factory,manager));	
+			c_S7.addObserver(new ConsoleFormatter(ruleEngine,"S7",ns,ontology,factory,manager));	
+			c_S8.addObserver(new ConsoleFormatter(ruleEngine,"S8",ns,ontology,factory,manager));	
+			c_S9.addObserver(new ConsoleFormatter(ruleEngine,"S9",ns,ontology,factory,manager));	
+			c_S10.addObserver(new ConsoleFormatter(ruleEngine,"S10",ns,ontology,factory,manager));	
+			c_S11.addObserver(new ConsoleFormatter(ruleEngine,"S11",ns,ontology,factory,manager));	
+			c_S12.addObserver(new ConsoleFormatter(ruleEngine,"S12",ns,ontology,factory,manager));	
+			c_S13.addObserver(new ConsoleFormatter(ruleEngine,"S13",ns,ontology,factory,manager));	
+			c_S14.addObserver(new ConsoleFormatter(ruleEngine,"S14",ns,ontology,factory,manager));	
 
 			//Start streaming data
 			Stream_C_Wtemp_Thread.start();

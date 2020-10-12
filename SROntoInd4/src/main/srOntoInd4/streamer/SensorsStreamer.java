@@ -146,14 +146,16 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
         // We now use the manager to apply the change
 				// manager.applyChange(addAxiomobshastime);
 
-				OWLDataPropertyAssertionAxiom timehasdate = factory.getOWLDataPropertyAssertionAxiom(inXSDDateTimeStamp, time, date + "^^http://www.w3.org/2001/XMLSchema#dateTimeStamp");
-				ontology.add(timehasdate);
+				//OWLDataPropertyAssertionAxiom timehasdate = factory.getOWLDataPropertyAssertionAxiom(inXSDDateTimeStamp, time, date.toString());
+				//"^^http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+				//ontology.add(timehasdate);
 				// add the axiom to the ontology.
         // AddAxiom addAxiomtimehasdate = new AddAxiom(ontology, timehasdate);
         // We now use the manager to apply the change
 				// manager.applyChange(addAxiomtimehasdate);
 
-				OWLDataPropertyAssertionAxiom obshassimpleresult = factory.getOWLDataPropertyAssertionAxiom(hasSimpleResult, obs, result + "^^http://www.w3.org/2001/XMLSchema#double");
+				OWLDataPropertyAssertionAxiom obshassimpleresult = factory.getOWLDataPropertyAssertionAxiom(hasSimpleResult, obs, result);
+				//http://www.w3.org/2001/XMLSchema#double
 				ontology.add(obshassimpleresult);
 				// add the axiom to the ontology.
         // AddAxiom addAxiomobshassimpleresult = new AddAxiom(ontology, obshassimpleresult);
