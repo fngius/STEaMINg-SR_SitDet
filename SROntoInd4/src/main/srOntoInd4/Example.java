@@ -103,7 +103,7 @@ public class Example {
 			String queryS1 = "REGISTER QUERY S1detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 ?o4 "
 			+ "FROM STREAM <Stream_S_G_current> [RANGE 20s STEP 5s] "
 			+ "FROM STREAM <Stream_S_C_temp> 		[RANGE 20s STEP 5s] "
 			+ "FROM STREAM <Stream_S_T_temp> 		[RANGE 20s STEP 5s] "
@@ -133,7 +133,7 @@ public class Example {
 		String queryS2 = "REGISTER QUERY S2detection AS "
 		+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 		+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-		+ "SELECT ?m ?pl "
+		+ "SELECT ?m ?pl ?o1 ?o2 ?o3 ?o4 "
 		+ "FROM STREAM <Stream_S_G_current> [RANGE 20s STEP 5s] "
 		+ "FROM STREAM <Stream_S_C_temp> 		[RANGE 20s STEP 5s] "
 		+ "FROM STREAM <Stream_S_T_temp> 		[RANGE 20s STEP 5s] "
@@ -163,7 +163,7 @@ public class Example {
 		String queryS3 = "REGISTER QUERY S3detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 ?o4 "
 			+ "FROM STREAM <Stream_S_P_temp> 	[RANGE 25s STEP 5s] "
 			+ "FROM STREAM <Stream_S_GB_temp> [RANGE 25s STEP 5s] "
 			+ "FROM STREAM <Stream_S_G_speed> [RANGE 25s STEP 5s] "
@@ -193,7 +193,7 @@ public class Example {
 		String queryS4 = "REGISTER QUERY S4detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 ?o4 "
 			+ "FROM STREAM <Stream_S_P_temp> 	[RANGE 25s STEP 5s] "
 			+ "FROM STREAM <Stream_S_GB_temp> [RANGE 25s STEP 5s] "
 			+ "FROM STREAM <Stream_S_G_speed> [RANGE 25s STEP 5s] "
@@ -223,7 +223,7 @@ public class Example {
 		String queryS5 = "REGISTER QUERY S5detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 ?o4 "
 			+ "FROM STREAM <Stream_S_P_temp> 	[RANGE 25s STEP 5s] "
 			+ "FROM STREAM <Stream_S_GB_temp> [RANGE 25s STEP 5s] "
 			+ "FROM STREAM <Stream_S_G_speed> [RANGE 25s STEP 5s] "
@@ -253,7 +253,7 @@ public class Example {
 		String queryS6 = "REGISTER QUERY S6detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 "
 			+ "FROM STREAM <Stream_S_C_Wtemp> [RANGE 15s STEP 5s] "
 			+ "FROM STREAM <Stream_S_TG_temp> [RANGE 15s STEP 5s] "
 			+ "FROM STREAM <Stream_S_G_temp> 	[RANGE 15s STEP 5s] "
@@ -281,7 +281,7 @@ public class Example {
 		String queryS7 = "REGISTER QUERY S7detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 "
 			+ "FROM STREAM <Stream_S_C_Wtemp> [RANGE 15s STEP 5s] "
 			+ "FROM STREAM <Stream_S_TG_temp> [RANGE 15s STEP 5s] "
 			+ "FROM STREAM <Stream_S_G_temp> 	[RANGE 15s STEP 5s] "
@@ -306,7 +306,7 @@ public class Example {
 		String queryS8 = "REGISTER QUERY S8detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 "
 			+ "FROM STREAM <Stream_S_P_temp> 		[RANGE 20s STEP 5s] "
 			+ "FROM STREAM <Stream_S_TG_temp> 	[RANGE 20s STEP 5s] "
 			+ "FROM STREAM <Stream_S_Conv_temp> [RANGE 20s STEP 5s] "
@@ -331,7 +331,7 @@ public class Example {
 		String queryS9 = "REGISTER QUERY S9detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 "
 			+ "FROM STREAM <Stream_S_P_temp> 		[RANGE 20s STEP 5s] "
 			+ "FROM STREAM <Stream_S_TG_temp> 	[RANGE 20s STEP 5s] "
 			+ "FROM STREAM <Stream_S_Conv_temp> [RANGE 20s STEP 5s] "
@@ -356,7 +356,7 @@ public class Example {
 		String queryS10 = "REGISTER QUERY S10detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 ?o4 "
 			+ "FROM STREAM <Stream_S_C_Wtemp> 	[RANGE 20s STEP 5s] "
 			+ "FROM STREAM <Stream_S_TG_temp> 	[RANGE 20s STEP 5s] "
 			+ "FROM STREAM <Stream_S_Conv_temp> [RANGE 20s STEP 5s] "
@@ -386,7 +386,7 @@ public class Example {
 		String queryS11 = "REGISTER QUERY S11detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 "
 			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 30s STEP 5s] "
 			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 30s STEP 5s] "
 			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 30s STEP 5s] "
@@ -411,7 +411,7 @@ public class Example {
 		String queryS12 = "REGISTER QUERY S12detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 "
 			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 30s STEP 5s] "
 			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 30s STEP 5s] "
 			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 30s STEP 5s] "
@@ -436,7 +436,7 @@ public class Example {
 		String queryS13 = "REGISTER QUERY S13detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 "
 			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 35s STEP 5s] "
 			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 35s STEP 5s] "
 			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 35s STEP 5s] "
@@ -461,7 +461,7 @@ public class Example {
 			String queryS14 = "REGISTER QUERY S14detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
-			+ "SELECT ?m ?pl "
+			+ "SELECT ?m ?pl ?o1 ?o2 ?o3 "
 			+ "FROM STREAM <Stream_S_PowerOutput> [RANGE 35s STEP 5s] "
 			+ "FROM STREAM <Stream_S_R_speed> 		[RANGE 35s STEP 5s] "
 			+ "FROM STREAM <Stream_S_R_Pangle> 		[RANGE 35s STEP 5s] "
@@ -561,20 +561,20 @@ public class Example {
 			 * Attach a result consumer to the query result proxy to print the results on the console
 			 * and to modify the COInd4 ontology.
 			 */
-			c_S1.addObserver(new ConsoleFormatter("S1",ns,ontology,factory,manager));	
-			c_S2.addObserver(new ConsoleFormatter("S2",ns,ontology,factory,manager));	
-			c_S3.addObserver(new ConsoleFormatter("S3",ns,ontology,factory,manager));	
-			c_S4.addObserver(new ConsoleFormatter("S4",ns,ontology,factory,manager));	
-			c_S5.addObserver(new ConsoleFormatter("S5",ns,ontology,factory,manager));	
-			c_S6.addObserver(new ConsoleFormatter("S6",ns,ontology,factory,manager));	
-			c_S7.addObserver(new ConsoleFormatter("S7",ns,ontology,factory,manager));	
-			c_S8.addObserver(new ConsoleFormatter("S8",ns,ontology,factory,manager));	
-			c_S9.addObserver(new ConsoleFormatter("S9",ns,ontology,factory,manager));	
-			c_S10.addObserver(new ConsoleFormatter("S10",ns,ontology,factory,manager));	
-			c_S11.addObserver(new ConsoleFormatter("S11",ns,ontology,factory,manager));	
-			c_S12.addObserver(new ConsoleFormatter("S12",ns,ontology,factory,manager));	
-			c_S13.addObserver(new ConsoleFormatter("S13",ns,ontology,factory,manager));	
-			c_S14.addObserver(new ConsoleFormatter("S14",ns,ontology,factory,manager));	
+			c_S1.addObserver(new ConsoleFormatter("S1",ns,ontology,factory,manager,6));	
+			c_S2.addObserver(new ConsoleFormatter("S2",ns,ontology,factory,manager,6));	
+			c_S3.addObserver(new ConsoleFormatter("S3",ns,ontology,factory,manager,6));	
+			c_S4.addObserver(new ConsoleFormatter("S4",ns,ontology,factory,manager,6));	
+			c_S5.addObserver(new ConsoleFormatter("S5",ns,ontology,factory,manager,6));	
+			c_S6.addObserver(new ConsoleFormatter("S6",ns,ontology,factory,manager,5));	
+			c_S7.addObserver(new ConsoleFormatter("S7",ns,ontology,factory,manager,5));	
+			c_S8.addObserver(new ConsoleFormatter("S8",ns,ontology,factory,manager,5));	
+			c_S9.addObserver(new ConsoleFormatter("S9",ns,ontology,factory,manager,5));	
+			c_S10.addObserver(new ConsoleFormatter("S10",ns,ontology,factory,manager,6));	
+			c_S11.addObserver(new ConsoleFormatter("S11",ns,ontology,factory,manager,5));	
+			c_S12.addObserver(new ConsoleFormatter("S12",ns,ontology,factory,manager,5));	
+			c_S13.addObserver(new ConsoleFormatter("S13",ns,ontology,factory,manager,5));	
+			c_S14.addObserver(new ConsoleFormatter("S14",ns,ontology,factory,manager,5));	
 
 			//Start data streams
 			Stream_C_Wtemp_Thread.start();

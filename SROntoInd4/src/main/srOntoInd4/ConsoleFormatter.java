@@ -71,14 +71,16 @@ public class ConsoleFormatter extends ResultFormatter {
   private OWLOntology ontology;
   private OWLDataFactory factory;
   // private OWLOntologyManager manager;
+  private int sizeTuple;
 
   public ConsoleFormatter(String situationName, String baseUri, OWLOntology ontology, OWLDataFactory factory,
-      OWLOntologyManager manager) {
+      OWLOntologyManager manager, int sizeTuple) {
     this.situationName = situationName;
     this.baseUri = baseUri;
     this.ontology = ontology;
     this.factory = factory;
     // this.manager = manager;
+    this.sizeTuple = sizeTuple;
   }
 
   @Override
@@ -90,8 +92,8 @@ public class ConsoleFormatter extends ResultFormatter {
     if (rdfTable.size() == 0)
       System.out.println(situationName + " NO DETECTED.");
     else {
-      // String pre_SOSAOnt = "http://www.w3.org/ns/sosa/";
       // String pre_TIME = "http://www.w3.org/2006/time#";
+      String pre_SOSAOnt = "http://www.w3.org/ns/sosa/";
 
       System.out.println(situationName + " DETECTED. " + rdfTable.size() + " result at SystemTime: " + System.currentTimeMillis());
       rdfTable.stream().forEach((t) -> {
@@ -104,6 +106,17 @@ public class ConsoleFormatter extends ResultFormatter {
         ontology.add(sitType);
         // AddAxiom addAxiomsitType = new AddAxiom(ontology, sitType);
         // manager.applyChange(addAxiomsitType);
+        
+        OWLClass Observation = factory.getOWLClass(IRI.create(pre_SOSAOnt + "Observation"));
+        OWLObjectProperty hasObservation = factory.getOWLObjectProperty(IRI.create(baseUri + "hasObservation"));
+        for (int i = 2; i < sizeTuple; i++) {
+          OWLIndividual Obs = factory.getOWLNamedIndividual(IRI.create(t.get(i)));  
+          OWLClassAssertionAxiom ObsType = factory.getOWLClassAssertionAxiom(Observation, sit);
+          ontology.add(ObsType);
+          OWLObjectPropertyAssertionAxiom hasObsSitObs = factory.getOWLObjectPropertyAssertionAxiom(hasObservation, sit, Obs);
+          ontology.add(hasObsSitObs);
+        }
+        
 
         OWLClass Machine = factory.getOWLClass(IRI.create(baseUri + "Machine"));
         OWLIndividual M3 = factory.getOWLNamedIndividual(IRI.create(t.get(0)));
