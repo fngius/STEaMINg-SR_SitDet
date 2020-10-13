@@ -26,7 +26,7 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import eu.larkc.csparql.cep.api.RdfQuadruple;
 import eu.larkc.csparql.cep.api.RdfStream;
 
-public class SensorsStreamer extends RdfStream implements Runnable  {
+public class SensorsStreamer extends RdfStream implements Runnable {
 
 	private long sleepTime;
 	private String baseUri;
@@ -36,7 +36,8 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
 	private OWLOntology ontology;
 	private OWLDataFactory factory;
 
-	public SensorsStreamer(String iri, String baseUri, String prop,long sleepTime,int Tmin,int Tmax, OWLOntology ontology, OWLDataFactory factory){
+	public SensorsStreamer(String iri, String baseUri, String prop, long sleepTime, int Tmin, int Tmax,
+			OWLOntology ontology, OWLDataFactory factory) {
 		super(iri);
 		this.sleepTime = sleepTime;
 		this.baseUri = baseUri;
@@ -67,100 +68,111 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
 		OWLObjectProperty madeObservation = factory.getOWLObjectProperty(IRI.create(pre_SOSAOnt + "madeObservation"));
 		OWLObjectProperty observedProperty = factory.getOWLObjectProperty(IRI.create(pre_SOSAOnt + "observedProperty"));
 		OWLDataProperty hasSimpleResult = factory.getOWLDataProperty(IRI.create(pre_SOSAOnt + "hasSimpleResult"));
-		OWLObjectProperty hasTime = factory.getOWLObjectProperty(IRI.create(ns,"hasTime"));
+		OWLObjectProperty hasTime = factory.getOWLObjectProperty(IRI.create(ns, "hasTime"));
 		OWLDataProperty inXSDDateTimeStamp = factory.getOWLDataProperty(IRI.create(pre_TIME + "inXSDDateTimeStamp"));
 
-		while(true){
-			try{
+		while (true) {
+			try {
 				result = random.nextInt(Tmax - Tmin + 1) + Tmin;
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'");
 				Timestamp date = new Timestamp(System.currentTimeMillis());
 
-				//RdfQuadruple q = new RdfQuadruple(baseUri + "M", baseUri + "hosts", baseUri + "sensorTM", System.currentTimeMillis());
-				//System.out.println(q);
-				//this.put(q);
-				RdfQuadruple q = new RdfQuadruple(baseUri + "S_" + prop, baseUri + "madeObservation", baseUri + "S_" + prop + "-Obs-" + observationIndex, System.currentTimeMillis());
-				//System.out.println(q);
+				// RdfQuadruple q = new RdfQuadruple(baseUri + "M", baseUri + "hosts", baseUri +
+				// "sensorTM", System.currentTimeMillis());
+				// System.out.println(q);
+				// this.put(q);
+				RdfQuadruple q = new RdfQuadruple(baseUri + "S_" + prop, baseUri + "madeObservation",
+						baseUri + "S_" + prop + "-Obs-" + observationIndex, System.currentTimeMillis());
+				// System.out.println(q);
 				this.put(q);
-				q = new RdfQuadruple(baseUri + "S_" + prop + "-Obs-" + observationIndex, baseUri + "observedProperty", baseUri + prop, System.currentTimeMillis());
-				//System.out.println(q);
+				q = new RdfQuadruple(baseUri + "S_" + prop + "-Obs-" + observationIndex, baseUri + "observedProperty",
+						baseUri + prop, System.currentTimeMillis());
+				// System.out.println(q);
 				this.put(q);
-				q = new RdfQuadruple(baseUri + "S_" + prop + "-Obs-" + observationIndex, baseUri + "hasSimpleResult", result + "^^http://www.w3.org/2001/XMLSchema#double", System.currentTimeMillis());
-				//System.out.println(q);
+				q = new RdfQuadruple(baseUri + "S_" + prop + "-Obs-" + observationIndex, baseUri + "hasSimpleResult",
+						result + "^^http://www.w3.org/2001/XMLSchema#double", System.currentTimeMillis());
+				// System.out.println(q);
 				this.put(q);
-				q = new RdfQuadruple(baseUri + "S_" + prop + "-Obs-" + observationIndex, baseUri + "hasTime", baseUri + "t-obs-S_" + prop + "-"+ timeIndex, System.currentTimeMillis());
-				//System.out.println(q);
+				q = new RdfQuadruple(baseUri + "S_" + prop + "-Obs-" + observationIndex, baseUri + "hasTime",
+						baseUri + "t-obs-S_" + prop + "-" + timeIndex, System.currentTimeMillis());
+				// System.out.println(q);
 				this.put(q);
-				q = new RdfQuadruple(baseUri + "t-obs-S_" + prop + "-"+ timeIndex, baseUri + "inXSDDateTime", date + "^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", System.currentTimeMillis());
-				//System.out.println(q);
+				q = new RdfQuadruple(baseUri + "t-obs-S_" + prop + "-" + timeIndex, baseUri + "inXSDDateTime",
+						date + "^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", System.currentTimeMillis());
+				// System.out.println(q);
 				this.put(q);
-				
-				OWLIndividual sensor = factory.getOWLNamedIndividual(IRI.create(ns,"S_" + prop));
+
+				OWLIndividual sensor = factory.getOWLNamedIndividual(IRI.create(ns, "S_" + prop));
 				OWLClassAssertionAxiom sensorType = factory.getOWLClassAssertionAxiom(Sensor, sensor);
 				ontology.add(sensorType);
 				// add the axiom to the ontology.
-        // AddAxiom addAxiomsensorType = new AddAxiom(ontology, sensorType);
-        // We now use the manager to apply the change
+				// AddAxiom addAxiomsensorType = new AddAxiom(ontology, sensorType);
+				// We now use the manager to apply the change
 				// manager.applyChange(addAxiomsensorType);
-				
-				OWLIndividual obs = factory.getOWLNamedIndividual(IRI.create(ns,"S_" + prop + "-Obs-" + observationIndex));
+
+				OWLIndividual obs = factory.getOWLNamedIndividual(IRI.create(ns, "S_" + prop + "-Obs-" + observationIndex));
 				OWLClassAssertionAxiom obsType = factory.getOWLClassAssertionAxiom(Observation, obs);
 				ontology.add(obsType);
 				// add the axiom to the ontology.
-        // AddAxiom addAxiomobsType = new AddAxiom(ontology, obsType);
-        // We now use the manager to apply the change
+				// AddAxiom addAxiomobsType = new AddAxiom(ontology, obsType);
+				// We now use the manager to apply the change
 				// manager.applyChange(addAxiomobsType);
 
-				OWLIndividual property = factory.getOWLNamedIndividual(IRI.create(ns,prop));
+				OWLIndividual property = factory.getOWLNamedIndividual(IRI.create(ns, prop));
 				OWLClassAssertionAxiom propType = factory.getOWLClassAssertionAxiom(ObservableProperty, property);
 				ontology.add(propType);
 				// add the axiom to the ontology.
-        // AddAxiom addAxiompropType = new AddAxiom(ontology, propType);
-        // We now use the manager to apply the change
+				// AddAxiom addAxiompropType = new AddAxiom(ontology, propType);
+				// We now use the manager to apply the change
 				// manager.applyChange(addAxiompropType);
 
-				OWLObjectPropertyAssertionAxiom sensormadeobs = factory.getOWLObjectPropertyAssertionAxiom(madeObservation, sensor, obs);
+				OWLObjectPropertyAssertionAxiom sensormadeobs = factory.getOWLObjectPropertyAssertionAxiom(madeObservation,
+						sensor, obs);
 				ontology.add(sensormadeobs);
 				// add the axiom to the ontology.
-        // AddAxiom addAxiomsensormadeobs = new AddAxiom(ontology, sensormadeobs);
-        // We now use the manager to apply the change
+				// AddAxiom addAxiomsensormadeobs = new AddAxiom(ontology, sensormadeobs);
+				// We now use the manager to apply the change
 				// manager.applyChange(addAxiomsensormadeobs);
 
-				OWLObjectPropertyAssertionAxiom observedProp = factory.getOWLObjectPropertyAssertionAxiom(observedProperty, obs, property);
+				OWLObjectPropertyAssertionAxiom observedProp = factory.getOWLObjectPropertyAssertionAxiom(observedProperty, obs,
+						property);
 				ontology.add(observedProp);
 				// add the axiom to the ontology.
-        // AddAxiom addAxiomobservedProp = new AddAxiom(ontology, observedProp);
-        // We now use the manager to apply the change
-				//manager.applyChange(addAxiomobservedProp);
+				// AddAxiom addAxiomobservedProp = new AddAxiom(ontology, observedProp);
+				// We now use the manager to apply the change
+				// manager.applyChange(addAxiomobservedProp);
 
-				OWLIndividual time = factory.getOWLNamedIndividual(IRI.create(pre_TIME,"t-obs-S_" + prop + "-"+ timeIndex));        		
+				OWLIndividual time = factory.getOWLNamedIndividual(IRI.create(pre_TIME, "t-obs-S_" + prop + "-" + timeIndex));
 				OWLClassAssertionAxiom timeType = factory.getOWLClassAssertionAxiom(Instant, time);
 				ontology.add(timeType);
 				// add the axiom to the ontology.
-        // AddAxiom addAxiomtimeType = new AddAxiom(ontology, timeType);
-        // We now use the manager to apply the change
+				// AddAxiom addAxiomtimeType = new AddAxiom(ontology, timeType);
+				// We now use the manager to apply the change
 				// manager.applyChange(addAxiomtimeType);
 
 				OWLObjectPropertyAssertionAxiom obshastime = factory.getOWLObjectPropertyAssertionAxiom(hasTime, obs, time);
 				ontology.add(obshastime);
 				// add the axiom to the ontology.
-        // AddAxiom addAxiomobshastime = new AddAxiom(ontology, obshastime);
-        // We now use the manager to apply the change
+				// AddAxiom addAxiomobshastime = new AddAxiom(ontology, obshastime);
+				// We now use the manager to apply the change
 				// manager.applyChange(addAxiomobshastime);
-				
-				OWLDataPropertyAssertionAxiom timehasdate = factory.getOWLDataPropertyAssertionAxiom(inXSDDateTimeStamp, time, sdf.format(date));
+
+				OWLDataPropertyAssertionAxiom timehasdate = factory.getOWLDataPropertyAssertionAxiom(inXSDDateTimeStamp, time,
+						sdf.format(date));
 				ontology.add(timehasdate);
 				// add the axiom to the ontology.
-        // AddAxiom addAxiomtimehasdate = new AddAxiom(ontology, timehasdate);
-        // We now use the manager to apply the change
+				// AddAxiom addAxiomtimehasdate = new AddAxiom(ontology, timehasdate);
+				// We now use the manager to apply the change
 				// manager.applyChange(addAxiomtimehasdate);
 
-				OWLDataPropertyAssertionAxiom obshassimpleresult = factory.getOWLDataPropertyAssertionAxiom(hasSimpleResult, obs, result);
-				//http://www.w3.org/2001/XMLSchema#double
+				OWLDataPropertyAssertionAxiom obshassimpleresult = factory.getOWLDataPropertyAssertionAxiom(hasSimpleResult,
+						obs, result);
+				// http://www.w3.org/2001/XMLSchema#double
 				ontology.add(obshassimpleresult);
 				// add the axiom to the ontology.
-        // AddAxiom addAxiomobshassimpleresult = new AddAxiom(ontology, obshassimpleresult);
-        // We now use the manager to apply the change
+				// AddAxiom addAxiomobshassimpleresult = new AddAxiom(ontology,
+				// obshassimpleresult);
+				// We now use the manager to apply the change
 				// manager.applyChange(addAxiomobshassimpleresult);
 
 				try {
@@ -168,12 +180,11 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
 				} catch (OWLOntologyStorageException e1) {
 					e1.printStackTrace();
 				}
-				
+
 				TimeUnit.SECONDS.sleep(sleepTime);
-				//Thread.sleep(sleepTime);
 				observationIndex++;
 				timeIndex++;
-			} catch(Exception e){
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}

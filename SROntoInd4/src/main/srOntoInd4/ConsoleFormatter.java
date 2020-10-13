@@ -4,7 +4,6 @@ import eu.larkc.csparql.common.RDFTable;
 import eu.larkc.csparql.common.RDFTuple;
 import eu.larkc.csparql.common.streams.format.GenericObservable;
 import eu.larkc.csparql.core.ResultFormatter;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -15,12 +14,9 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import com.clarkparsia.owlapi.explanation.BlackBoxExplanation;
 import com.clarkparsia.owlapi.explanation.HSTExplanationGenerator;
 import com.clarkparsia.owlapi.explanation.SatisfiabilityConverter;
-//import com.hp.hpl.jena.reasoner.ReasonerFactory;
-
 import org.eclipse.rdf4j.model.URI;
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.HermiT.ReasonerFactory;
@@ -70,21 +66,19 @@ import org.swrlapi.parser.SWRLParseException;
 
 public class ConsoleFormatter extends ResultFormatter {
 
-  private OWLReasoner ruleEngine;
   private String situationName;
   private String baseUri;
   private OWLOntology ontology;
   private OWLDataFactory factory;
-  private OWLOntologyManager manager;
+  // private OWLOntologyManager manager;
 
-  public ConsoleFormatter(OWLReasoner ruleEngine, String situationName, String baseUri, OWLOntology ontology,
-      OWLDataFactory factory, OWLOntologyManager manager) {
-    this.ruleEngine = ruleEngine;
+  public ConsoleFormatter(String situationName, String baseUri, OWLOntology ontology, OWLDataFactory factory,
+      OWLOntologyManager manager) {
     this.situationName = situationName;
     this.baseUri = baseUri;
     this.ontology = ontology;
     this.factory = factory;
-    this.manager = manager;
+    // this.manager = manager;
   }
 
   @Override
@@ -96,61 +90,48 @@ public class ConsoleFormatter extends ResultFormatter {
     if (rdfTable.size() == 0)
       System.out.println(situationName + " NO DETECTED.");
     else {
-      String ontologyURI = "http://semanticweb.org/STEaMINg/ContextOntology-COInd4";
-      String ns = ontologyURI + "#";
-      String pre_SOSAOnt = "http://www.w3.org/ns/sosa/";
-      String pre_TIME = "http://www.w3.org/2006/time#";
+      // String pre_SOSAOnt = "http://www.w3.org/ns/sosa/";
+      // String pre_TIME = "http://www.w3.org/2006/time#";
 
-      System.out.println(
-          situationName + " DETECTED. " + rdfTable.size() + " result at SystemTime: " + System.currentTimeMillis());
+      System.out.println(situationName + " DETECTED. " + rdfTable.size() + " result at SystemTime: " + System.currentTimeMillis());
       rdfTable.stream().forEach((t) -> {
         System.out.println(t.get(0) + " and " + t.get(1) + " are involved in situation " + situationName);
 
-        OWLClass Situation = factory.getOWLClass(IRI.create(ns + "Situation-" + situationName));
+        OWLClass Situation = factory.getOWLClass(IRI.create(baseUri + "Situation-" + situationName));
         OWLIndividual sit = factory
-            .getOWLNamedIndividual(IRI.create(ns, situationName + "-" + System.currentTimeMillis()));
+            .getOWLNamedIndividual(IRI.create(baseUri, situationName + "-" + System.currentTimeMillis()));
         OWLClassAssertionAxiom sitType = factory.getOWLClassAssertionAxiom(Situation, sit);
         ontology.add(sitType);
-        // add the axiom to the ontology.
         // AddAxiom addAxiomsitType = new AddAxiom(ontology, sitType);
-        // We now use the manager to apply the change
         // manager.applyChange(addAxiomsitType);
 
-        OWLClass Machine = factory.getOWLClass(IRI.create(ns + "Machine"));
+        OWLClass Machine = factory.getOWLClass(IRI.create(baseUri + "Machine"));
         OWLIndividual M3 = factory.getOWLNamedIndividual(IRI.create(t.get(0)));
         OWLClassAssertionAxiom machineM3 = factory.getOWLClassAssertionAxiom(Machine, M3);
         ontology.add(machineM3);
-        // add the axiom to the ontology.
         // AddAxiom addAxiommachineM3 = new AddAxiom(ontology, machineM3);
-        // We now use the manager to apply the change
         // manager.applyChange(addAxiommachineM3);
 
-        OWLClass Line = factory.getOWLClass(IRI.create(ns + "Line"));
+        OWLClass Line = factory.getOWLClass(IRI.create(baseUri + "Line"));
         OWLIndividual PL1 = factory.getOWLNamedIndividual(IRI.create(t.get(1)));
         OWLClassAssertionAxiom pordLinePL1 = factory.getOWLClassAssertionAxiom(Line, PL1);
         ontology.add(pordLinePL1);
-        // add the axiom to the ontology.
         // AddAxiom addAxiompordLinePL1 = new AddAxiom(ontology, pordLinePL1);
-        // We now use the manager to apply the change
         // manager.applyChange(addAxiompordLinePL1);
 
-        OWLObjectProperty concernBy = factory.getOWLObjectProperty(IRI.create(ns + "concernBy"));
+        OWLObjectProperty concernBy = factory.getOWLObjectProperty(IRI.create(baseUri + "concernBy"));
         OWLObjectPropertyAssertionAxiom concernByAssertM3 = factory.getOWLObjectPropertyAssertionAxiom(concernBy, M3,
             sit);
         ontology.add(concernByAssertM3);
-        // add the axiom to the ontology.
-        // AddAxiom addAxiomconcernByAssertM3 = new AddAxiom(ontology,
-        // concernByAssertM3);
-        // We now use the manager to apply the change
+        // AddAxiom addAxiomconcernByAssertM3 = new
+        // AddAxiom(ontology,concernByAssertM3);
         // manager.applyChange(addAxiomconcernByAssertM3);
 
         OWLObjectPropertyAssertionAxiom concernByAssertPL1 = factory.getOWLObjectPropertyAssertionAxiom(concernBy, PL1,
             sit);
         ontology.add(concernByAssertPL1);
-        // add the axiom to the ontology.
         // AddAxiom addAxiomconcernByAssertPL1 = new AddAxiom(ontology,
         // concernByAssertPL1);
-        // We now use the manager to apply the change
         // manager.applyChange(addAxiomconcernByAssertPL1);
 
         try {
@@ -161,20 +142,27 @@ public class ConsoleFormatter extends ResultFormatter {
       });
 
       /*
-       * try { ruleEngine.createSWRLRule("CauseDetermination",
-       * "http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6(?sit)" +
-       * "->  http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasCause(?sit, http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters) "
-       * ); } catch (Exception e) { e.printStackTrace(); } ruleEngine.infer();
+       * Classical Reasoner sub-module of the Cause Determination module. 
        */
-
       OWLReasonerFactory reasonerFactory_CauseDet = new ReasonerFactory();
-			OWLReasoner ruleEngine_CauseDet = reasonerFactory_CauseDet.createReasoner(ontology);
+      OWLReasoner ruleEngine_CauseDet = reasonerFactory_CauseDet.createReasoner(ontology);
       boolean consistencyCheck = ruleEngine_CauseDet.isConsistent();
 
+      /*
+       * try { ruleEngine_CauseDet.createSWRLRule("CauseDetermination",
+       * "http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6(?sit)" +
+       * "->  http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasCause(?sit, http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters) "
+       * ); } catch (Exception e) { e.printStackTrace(); }
+       * ruleEngine_CauseDet.infer();
+       */
+
       if (consistencyCheck) {
-        //ruleEngine.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS, InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY, InferenceType.OBJECT_PROPERTY_ASSERTIONS);
+        // ruleEngine_CauseDet.precomputeInferences(InferenceType.CLASS_HIERARCHY,
+        // InferenceType.CLASS_ASSERTIONS, InferenceType.OBJECT_PROPERTY_HIERARCHY,
+        // InferenceType.DATA_PROPERTY_HIERARCHY,
+        // InferenceType.OBJECT_PROPERTY_ASSERTIONS);
         ruleEngine_CauseDet.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
-        
+
         List<InferredAxiomGenerator<? extends OWLAxiom>> generators = new ArrayList<>();
         // generators.add(new InferredSubClassAxiomGenerator());
         // generators.add(new InferredClassAssertionAxiomGenerator());
@@ -194,50 +182,39 @@ public class ConsoleFormatter extends ResultFormatter {
         // generators.add(new InferredDisjointClassesAxiomGenerator());
 
         InferredOntologyGenerator iog = new InferredOntologyGenerator(ruleEngine_CauseDet, generators);
-        //InferredOntologyGenerator iog = new InferredOntologyGenerator(ruleEngine);
-        
+        // InferredOntologyGenerator iog = new InferredOntologyGenerator(ruleEngine_CauseDet);
+
         try {
           iog.fillOntology(factory, ontology);
         } catch (OWLOntologyChangeException e1) {
           e1.printStackTrace();
-        }        
+        }
         try {
           ontology.saveOntology();
         } catch (OWLOntologyStorageException e1) {
           e1.printStackTrace();
         }
         /*
-        OWLOntology inferredAxiomsOntology = null;
-        try {
-          inferredAxiomsOntology = manager.createOntology();
-        } catch (OWLOntologyCreationException e) {
-          // TODO Auto-generated catch block
-          e.printStackTrace();
-        }
-        
-        File inferredOntologyFile = new File(
-          //"/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl");
-          "inferredAxioms"+System.currentTimeMillis()+".txt");
-        OutputStream outputStream = null;
-        try {
-          outputStream = new FileOutputStream(inferredOntologyFile);
-        } catch (FileNotFoundException e1) {
-          // TODO Auto-generated catch block
-          e1.printStackTrace();
-        }
-        
-        iog.fillOntology(factory, inferredAxiomsOntology);
-
-        try {
-          manager.saveOntology(inferredAxiomsOntology, outputStream);
-        } catch (OWLOntologyStorageException e) {
-          // TODO Auto-generated catch block
-          e.printStackTrace();
-        }
-        */
+         * OWLOntology inferredAxiomsOntology = null; try { inferredAxiomsOntology =
+         * manager.createOntology(); } catch (OWLOntologyCreationException e) { // TODO
+         * Auto-generated catch block e.printStackTrace(); }
+         * 
+         * File inferredOntologyFile = new File( //
+         * "/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl"
+         * ); "inferredAxioms"+System.currentTimeMillis()+".txt"); OutputStream
+         * outputStream = null; try { outputStream = new
+         * FileOutputStream(inferredOntologyFile); } catch (FileNotFoundException e1) {
+         * // TODO Auto-generated catch block e1.printStackTrace(); }
+         * 
+         * iog.fillOntology(factory, inferredAxiomsOntology);
+         * 
+         * try { manager.saveOntology(inferredAxiomsOntology, outputStream); } catch
+         * (OWLOntologyStorageException e) { // TODO Auto-generated catch block
+         * e.printStackTrace(); }
+         */
       } // End if consistencyCheck
       else {
-        System.out.println("Inconsistent input Ontology, Please check the OWL File");
+        System.out.println("Inconsistent COInd4 Ontology.");
       }
 
       try {
@@ -247,16 +224,13 @@ public class ConsoleFormatter extends ResultFormatter {
         e.printStackTrace();
       }
 
-      System.out.println("Inferred ontology saved!");
+      System.out.println("CAUSE DETERMINATION DONE.");
       System.out.println();
-      System.out.println();
-  }
-    /*
-    for (final RDFTuple t : res) {
-			System.out.println(t.toString());
-		}
-    System.out.println(); 
-    */ 
     }
+    /*
+     * for (final RDFTuple t : res) { System.out.println(t.toString()); }
+     * System.out.println();
+     */
+  }
 
 }
