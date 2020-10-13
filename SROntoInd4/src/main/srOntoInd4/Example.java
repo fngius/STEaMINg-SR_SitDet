@@ -110,23 +110,13 @@ public class Example {
 			String ns = ontologyURI + "#";
 			final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(fileOntology));
 			
-			// Create SQWRL query engine using the SWRLAPI
- 			//SQWRLQueryEngine queryEngine = SWRLAPIFactory.createSQWRLQueryEngine(ontology);
-
- 			// Create and execute a SQWRL query using the SWRLAPI
- 			//SQWRLResult result = queryEngine.runSQWRLQuery("q1","swrlb:add(?x, 2, 2) -> sqwrl:select(?x)");
-
- 			// Process the SQWRL result
- 			//if (result.next()) 
-	 		//System.out.println("Name: " + result.getLiteral("x").getInteger());
-	 
 			// create SWRL engines
 			//SWRLRuleEngine ruleEngine = SWRLAPIFactory.createSWRLRuleEngine(ontology);
 			//ruleEngine.infer();
-
 			OWLReasonerFactory reasonerFactory = new ReasonerFactory();
 			OWLReasoner ruleEngine = reasonerFactory.createReasoner(ontology);
-		
+			OWLDataFactory df = manager.getOWLDataFactory();
+
 			String queryS1 = "REGISTER QUERY S1detection AS "
 			+ "PREFIX : <http://semanticweb.org/STEaMINg/ContextOntology-COInd4#> "
 			+ "PREFIX sosa: <http://www.w3.org/ns/sosa/> "
@@ -561,37 +551,37 @@ public class Example {
 			Thread Stream_R_Pangle_Thread = new Thread(Stream_R_Pangle);
 
 			//Register new query in the engine
-			CsparqlQueryResultProxy c_S1 = engine.registerQuery(queryS1, false);
-			CsparqlQueryResultProxy c_S2 = engine.registerQuery(queryS2, false);
-			CsparqlQueryResultProxy c_S3 = engine.registerQuery(queryS3, false);
-			CsparqlQueryResultProxy c_S4 = engine.registerQuery(queryS4, false);
-			CsparqlQueryResultProxy c_S5 = engine.registerQuery(queryS5, false);
+			//CsparqlQueryResultProxy c_S1 = engine.registerQuery(queryS1, false);
+			//CsparqlQueryResultProxy c_S2 = engine.registerQuery(queryS2, false);
+			//CsparqlQueryResultProxy c_S3 = engine.registerQuery(queryS3, false);
+			//CsparqlQueryResultProxy c_S4 = engine.registerQuery(queryS4, false);
+			//CsparqlQueryResultProxy c_S5 = engine.registerQuery(queryS5, false);
 			CsparqlQueryResultProxy c_S6 = engine.registerQuery(queryS6, false);
-			CsparqlQueryResultProxy c_S7 = engine.registerQuery(queryS7, false);
-			CsparqlQueryResultProxy c_S8 = engine.registerQuery(queryS8, false);
-			CsparqlQueryResultProxy c_S9 = engine.registerQuery(queryS9, false);
-			CsparqlQueryResultProxy c_S10 = engine.registerQuery(queryS10, false);
-			CsparqlQueryResultProxy c_S11 = engine.registerQuery(queryS11, false);
-			CsparqlQueryResultProxy c_S12 = engine.registerQuery(queryS12, false);
-			CsparqlQueryResultProxy c_S13 = engine.registerQuery(queryS13, false);
-			CsparqlQueryResultProxy c_S14 = engine.registerQuery(queryS14, false);
+			//CsparqlQueryResultProxy c_S7 = engine.registerQuery(queryS7, false);
+			//CsparqlQueryResultProxy c_S8 = engine.registerQuery(queryS8, false);
+			//CsparqlQueryResultProxy c_S9 = engine.registerQuery(queryS9, false);
+			//CsparqlQueryResultProxy c_S10 = engine.registerQuery(queryS10, false);
+			//CsparqlQueryResultProxy c_S11 = engine.registerQuery(queryS11, false);
+			//CsparqlQueryResultProxy c_S12 = engine.registerQuery(queryS12, false);
+			//CsparqlQueryResultProxy c_S13 = engine.registerQuery(queryS13, false);
+			//CsparqlQueryResultProxy c_S14 = engine.registerQuery(queryS14, false);
 
 
 			//Attach a result consumer to the query result proxy to print the results on the console
-			c_S1.addObserver(new ConsoleFormatter(ruleEngine,"S1",ns,ontology,factory,manager));	
-			c_S2.addObserver(new ConsoleFormatter(ruleEngine,"S2",ns,ontology,factory,manager));	
-			c_S3.addObserver(new ConsoleFormatter(ruleEngine,"S3",ns,ontology,factory,manager));	
-			c_S4.addObserver(new ConsoleFormatter(ruleEngine,"S4",ns,ontology,factory,manager));	
-			c_S5.addObserver(new ConsoleFormatter(ruleEngine,"S5",ns,ontology,factory,manager));	
+			//c_S1.addObserver(new ConsoleFormatter(ruleEngine,"S1",ns,ontology,factory,manager));	
+			//c_S2.addObserver(new ConsoleFormatter(ruleEngine,"S2",ns,ontology,factory,manager));	
+			//c_S3.addObserver(new ConsoleFormatter(ruleEngine,"S3",ns,ontology,factory,manager));	
+			//c_S4.addObserver(new ConsoleFormatter(ruleEngine,"S4",ns,ontology,factory,manager));	
+			//c_S5.addObserver(new ConsoleFormatter(ruleEngine,"S5",ns,ontology,factory,manager));	
 			c_S6.addObserver(new ConsoleFormatter(ruleEngine,"S6",ns,ontology,factory,manager));	
-			c_S7.addObserver(new ConsoleFormatter(ruleEngine,"S7",ns,ontology,factory,manager));	
-			c_S8.addObserver(new ConsoleFormatter(ruleEngine,"S8",ns,ontology,factory,manager));	
-			c_S9.addObserver(new ConsoleFormatter(ruleEngine,"S9",ns,ontology,factory,manager));	
-			c_S10.addObserver(new ConsoleFormatter(ruleEngine,"S10",ns,ontology,factory,manager));	
-			c_S11.addObserver(new ConsoleFormatter(ruleEngine,"S11",ns,ontology,factory,manager));	
-			c_S12.addObserver(new ConsoleFormatter(ruleEngine,"S12",ns,ontology,factory,manager));	
-			c_S13.addObserver(new ConsoleFormatter(ruleEngine,"S13",ns,ontology,factory,manager));	
-			c_S14.addObserver(new ConsoleFormatter(ruleEngine,"S14",ns,ontology,factory,manager));	
+			//c_S7.addObserver(new ConsoleFormatter(ruleEngine,"S7",ns,ontology,factory,manager));	
+			//c_S8.addObserver(new ConsoleFormatter(ruleEngine,"S8",ns,ontology,factory,manager));	
+			//c_S9.addObserver(new ConsoleFormatter(ruleEngine,"S9",ns,ontology,factory,manager));	
+			//c_S10.addObserver(new ConsoleFormatter(ruleEngine,"S10",ns,ontology,factory,manager));	
+			//c_S11.addObserver(new ConsoleFormatter(ruleEngine,"S11",ns,ontology,factory,manager));	
+			//c_S12.addObserver(new ConsoleFormatter(ruleEngine,"S12",ns,ontology,factory,manager));	
+			//c_S13.addObserver(new ConsoleFormatter(ruleEngine,"S13",ns,ontology,factory,manager));	
+			//c_S14.addObserver(new ConsoleFormatter(ruleEngine,"S14",ns,ontology,factory,manager));	
 
 			//Start streaming data
 			Stream_C_Wtemp_Thread.start();

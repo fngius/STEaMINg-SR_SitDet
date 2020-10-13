@@ -14,14 +14,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import com.clarkparsia.owlapi.explanation.BlackBoxExplanation;
 import com.clarkparsia.owlapi.explanation.HSTExplanationGenerator;
 import com.clarkparsia.owlapi.explanation.SatisfiabilityConverter;
-import com.hp.hpl.jena.reasoner.ReasonerFactory;
+//import com.hp.hpl.jena.reasoner.ReasonerFactory;
 
 import org.eclipse.rdf4j.model.URI;
 import org.semanticweb.HermiT.Reasoner;
+import org.semanticweb.HermiT.ReasonerFactory;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.SystemOutDocumentTarget;
 import org.semanticweb.owlapi.model.AddAxiom;
@@ -36,6 +38,7 @@ import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
 import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyChangeException;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
@@ -108,7 +111,6 @@ public class ConsoleFormatter extends ResultFormatter {
             .getOWLNamedIndividual(IRI.create(ns, situationName + "-" + System.currentTimeMillis()));
         OWLClassAssertionAxiom sitType = factory.getOWLClassAssertionAxiom(Situation, sit);
         ontology.add(sitType);
-
         // add the axiom to the ontology.
         // AddAxiom addAxiomsitType = new AddAxiom(ontology, sitType);
         // We now use the manager to apply the change
@@ -156,51 +158,55 @@ public class ConsoleFormatter extends ResultFormatter {
         } catch (OWLOntologyStorageException e1) {
           e1.printStackTrace();
         }
-        /*
-         * try { ruleEngine.createSWRLRule("CauseDetermination",
-         * "http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6(?sit)" +
-         * "->  http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasCause(?sit, http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters) "
-         * ); } catch (Exception e) { // TODO Auto-generated catch block
-         * e.printStackTrace(); } System.out.println("AAA"); ruleEngine.infer();
-         */
       });
 
-      OWLDataFactory df = manager.getOWLDataFactory();
+      /*
+       * try { ruleEngine.createSWRLRule("CauseDetermination",
+       * "http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6(?sit)" +
+       * "->  http://semanticweb.org/STEaMINg/ContextOntology-COInd4#hasCause(?sit, http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters) "
+       * ); } catch (Exception e) { e.printStackTrace(); } ruleEngine.infer();
+       */
 
-      //ruleEngine.isConsistent();
-      boolean consistencyCheck = ruleEngine.isConsistent();
-      try {
-        ontology.saveOntology();
-      } catch (OWLOntologyStorageException e1) {
-        e1.printStackTrace();
-      }
+      OWLReasonerFactory reasonerFactory_CauseDet = new ReasonerFactory();
+			OWLReasoner ruleEngine_CauseDet = reasonerFactory_CauseDet.createReasoner(ontology);
+      boolean consistencyCheck = ruleEngine_CauseDet.isConsistent();
+
       if (consistencyCheck) {
-        ruleEngine.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
-            InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY,
-            InferenceType.OBJECT_PROPERTY_ASSERTIONS);
-
+        //ruleEngine.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS, InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY, InferenceType.OBJECT_PROPERTY_ASSERTIONS);
+        ruleEngine_CauseDet.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
+        
         List<InferredAxiomGenerator<? extends OWLAxiom>> generators = new ArrayList<>();
-        //generators.add(new InferredSubClassAxiomGenerator());
-        //generators.add(new InferredClassAssertionAxiomGenerator());
-        //generators.add(new InferredDataPropertyCharacteristicAxiomGenerator());
-        //generators.add(new InferredEquivalentClassAxiomGenerator());
-        //generators.add(new InferredEquivalentDataPropertiesAxiomGenerator());
-        //generators.add(new InferredEquivalentObjectPropertyAxiomGenerator());
-        generators.add(new InferredInverseObjectPropertiesAxiomGenerator());
-        generators.add(new InferredObjectPropertyCharacteristicAxiomGenerator());
-
-        // NOTE: InferredPropertyAssertionGenerator significantly slows down
-        // inference computation
+        // generators.add(new InferredSubClassAxiomGenerator());
+        // generators.add(new InferredClassAssertionAxiomGenerator());
+        // generators.add(new InferredDataPropertyCharacteristicAxiomGenerator());
+        // generators.add(new InferredEquivalentClassAxiomGenerator());
+        // generators.add(new InferredEquivalentDataPropertiesAxiomGenerator());
+        // generators.add(new InferredEquivalentObjectPropertyAxiomGenerator());
+        /// generators.add(new InferredInverseObjectPropertiesAxiomGenerator());
+        // generators.add(new InferredObjectPropertyCharacteristicAxiomGenerator());
         generators.add(new org.semanticweb.owlapi.util.InferredPropertyAssertionGenerator());
+        // generators.add(new InferredSubClassAxiomGenerator());
+        // generators.add(new InferredSubDataPropertyAxiomGenerator());
+        // generators.add(new InferredSubObjectPropertyAxiomGenerator());
+        // List<InferredIndividualAxiomGenerator<? extends OWLIndividualAxiom>>
+        // individualAxioms = new ArrayList<>();
+        // generators.addAll(individualAxioms);
+        // generators.add(new InferredDisjointClassesAxiomGenerator());
 
-        //generators.add(new InferredSubClassAxiomGenerator());
-        //generators.add(new InferredSubDataPropertyAxiomGenerator());
-        //generators.add(new InferredSubObjectPropertyAxiomGenerator());
-        List<InferredIndividualAxiomGenerator<? extends OWLIndividualAxiom>> individualAxioms = new ArrayList<>();
-        generators.addAll(individualAxioms);
-
-        //generators.add(new InferredDisjointClassesAxiomGenerator());
-        InferredOntologyGenerator iog = new InferredOntologyGenerator(ruleEngine, generators);
+        InferredOntologyGenerator iog = new InferredOntologyGenerator(ruleEngine_CauseDet, generators);
+        //InferredOntologyGenerator iog = new InferredOntologyGenerator(ruleEngine);
+        
+        try {
+          iog.fillOntology(factory, ontology);
+        } catch (OWLOntologyChangeException e1) {
+          e1.printStackTrace();
+        }        
+        try {
+          ontology.saveOntology();
+        } catch (OWLOntologyStorageException e1) {
+          e1.printStackTrace();
+        }
+      
         OWLOntology inferredAxiomsOntology = null;
         try {
           inferredAxiomsOntology = manager.createOntology();
@@ -208,19 +214,10 @@ public class ConsoleFormatter extends ResultFormatter {
           // TODO Auto-generated catch block
           e.printStackTrace();
         }
-        iog.fillOntology(df, inferredAxiomsOntology);
         
-        iog.fillOntology(df, ontology);
-        
-        try {
-          ontology.saveOntology();
-        } catch (OWLOntologyStorageException e1) {
-          e1.printStackTrace();
-        }
-
-        File inferredOntologyFile = new File("output.txt");
-        // Now we create a stream since the ontology manager can then write to that
-        // stream.
+        File inferredOntologyFile = new File(
+          //"/home/franco/Repositories/SR-OntoInd4/SROntoInd4/ContextOntology-COInd4.owl");
+          "inferredAxioms"+System.currentTimeMillis()+".txt");
         OutputStream outputStream = null;
         try {
           outputStream = new FileOutputStream(inferredOntologyFile);
@@ -228,32 +225,32 @@ public class ConsoleFormatter extends ResultFormatter {
           // TODO Auto-generated catch block
           e1.printStackTrace();
         }
-        try {
-          // We use the same format as for the input ontology.
-          try {
-            manager.saveOntology(inferredAxiomsOntology, outputStream);
-          } catch (OWLOntologyStorageException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-          }
-        } finally { }
         
-  } // End if consistencyCheck
-  else {
-      System.out.println("Inconsistent input Ontology, Please check the OWL File");
-  }
-    
-  try {
-    //infOnt.saveOntology();
-    ontology.saveOntology();
-  } catch (OWLOntologyStorageException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-  }
-  System.out.println("Inferred ontology saved!");
+        iog.fillOntology(factory, inferredAxiomsOntology);
+
+        try {
+          manager.saveOntology(inferredAxiomsOntology, outputStream);
+        } catch (OWLOntologyStorageException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }
+
+      } // End if consistencyCheck
+      else {
+        System.out.println("Inconsistent input Ontology, Please check the OWL File");
+      }
+
+      try {
+        ontology.saveOntology();
+      } catch (OWLOntologyStorageException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
+
+      System.out.println("Inferred ontology saved!");
       System.out.println();
       System.out.println();
-    }
+  }
     /*
     for (final RDFTuple t : res) {
 			System.out.println(t.toString());
