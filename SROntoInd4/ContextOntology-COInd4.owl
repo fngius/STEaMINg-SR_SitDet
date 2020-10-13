@@ -8,6 +8,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:sosa="http://www.w3.org/ns/sosa/"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:time="http://www.w3.org/2006/time#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:ContextOntology-COInd4="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#">
     <owl:Ontology rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4"/>
@@ -37,6 +38,13 @@
 
 
     <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    
+
+
+    <!-- https://www.w3.org/TR/xmlschema11-2/#dateTimeStamp -->
+
+
+    <rdfs:Datatype rdf:about="https://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>
     
 
 
@@ -589,7 +597,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#inXSDDateTimeStamp">
         <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:range rdf:resource="https://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>
     </owl:DatatypeProperty>
     
 
@@ -1137,24 +1145,7 @@
 
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#M3">
         <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Machine"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592592065"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597038"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597078"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597100"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597119"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597137"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597164"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597201"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597221"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592869387"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874288"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874331"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874355"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874382"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874424"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874452"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874478"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874496"/>
+        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602599100218"/>
         <hasObservableProperty rdf:resource="http://www.w3.org/ns/sosa/C_Wtemp"/>
         <hasObservableProperty rdf:resource="http://www.w3.org/ns/sosa/Conv_temp"/>
         <hasObservableProperty rdf:resource="http://www.w3.org/ns/sosa/G_temp"/>
@@ -1196,24 +1187,7 @@
 
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PL1">
         <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Line"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592592065"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597038"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597078"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597100"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597119"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597137"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597164"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597201"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597221"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592869387"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874288"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874331"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874355"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874382"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874424"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874452"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874478"/>
-        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874496"/>
+        <concernBy rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602599100218"/>
         <hasObservableProperty rdf:resource="http://www.w3.org/ns/sosa/E_temp"/>
         <hasObservableProperty rdf:resource="http://www.w3.org/ns/sosa/P_temp"/>
         <hasObservableProperty rdf:resource="http://www.w3.org/ns/sosa/PowerOutput"/>
@@ -1269,180 +1243,10 @@
     
 
 
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592592065 -->
+    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602599100218 -->
 
 
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592592065">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597038 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597038">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597078 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597078">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597100 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597100">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597119 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597119">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597137 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597137">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597164 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597164">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597201 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597201">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597221 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592597221">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592869387 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592869387">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874288 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874288">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874331 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874331">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874355 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874355">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874382 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874382">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874424 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874424">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874452 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874452">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874478 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874478">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874496 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602592874496">
+    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S6-1602599100218">
         <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
         <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
     </owl:NamedIndividual>
@@ -1455,7 +1259,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1467,21 +1270,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_C_Wtemp-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_Wtemp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">81</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_C_Wtemp-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_Wtemp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">53</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">89</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">63</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1492,7 +1281,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_temp">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_temp-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_temp-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1504,21 +1292,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_C_temp-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_temp-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_temp-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_C_temp-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#C_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1529,7 +1303,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_Conv_temp">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_Conv_temp-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_Conv_temp-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1541,21 +1314,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_Conv_temp-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Conv_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_Conv_temp-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_Conv_temp-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_Conv_temp-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Conv_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">61</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">68</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">89</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1566,7 +1325,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_E_temp">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_E_temp-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_E_temp-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1578,21 +1336,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_E_temp-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#E_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_E_temp-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_E_temp-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_E_temp-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#E_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1603,7 +1347,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_GB_temp">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_GB_temp-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_GB_temp-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1615,21 +1358,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_GB_temp-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#GB_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_GB_temp-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_GB_temp-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_GB_temp-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#GB_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">64</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1640,7 +1369,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_current">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_current-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_current-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1652,21 +1380,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_G_current-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_current"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">810</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">989</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_current-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_current-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_G_current-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_current"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">949</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">950</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">909</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1677,7 +1391,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_speed">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_speed-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_speed-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1689,21 +1402,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_G_speed-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_speed"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">431</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">457</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_speed-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_speed-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_G_speed-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_speed"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">433</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">443</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">408</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1714,7 +1413,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_temp">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_temp-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_temp-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1726,21 +1424,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_G_temp-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_temp-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_G_temp-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_G_temp-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#G_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1751,7 +1435,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_OilTemp">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_OilTemp-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_OilTemp-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1763,21 +1446,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_OilTemp-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#OilTemp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">69</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_OilTemp-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_OilTemp-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_OilTemp-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#OilTemp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">41</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1788,7 +1457,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_P_temp">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_P_temp-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_P_temp-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1800,21 +1468,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_P_temp-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#P_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_P_temp-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_P_temp-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_P_temp-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#P_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1825,7 +1479,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_PowerOutput">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_PowerOutput-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_PowerOutput-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1837,21 +1490,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_PowerOutput-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PowerOutput"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1195</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2052</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_PowerOutput-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_PowerOutput-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_PowerOutput-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PowerOutput"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1347</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1808</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1957</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1862,7 +1501,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_Pangle">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_Pangle-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_Pangle-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1874,21 +1512,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_R_Pangle-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#R_Pangle"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_Pangle-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_Pangle-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_R_Pangle-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#R_Pangle"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1899,7 +1523,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_speed">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_speed-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_speed-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1911,20 +1534,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_R_speed-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#R_speed"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">263</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_speed-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_R_speed-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_R_speed-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#R_speed"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">280</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">264</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1935,7 +1545,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_TG_temp">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_TG_temp-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_TG_temp-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1947,21 +1556,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_TG_temp-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#TG_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_TG_temp-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_TG_temp-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_TG_temp-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#TG_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</sosa:hasSimpleResult>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -1972,7 +1567,6 @@
     <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_T_temp">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_T_temp-Obs-0"/>
-        <sosa:madeObservation rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_T_temp-Obs-1"/>
     </owl:NamedIndividual>
     
 
@@ -1984,31 +1578,7 @@
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_T_temp-0"/>
         <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#T_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_T_temp-Obs-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_T_temp-Obs-1">
-        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
-        <hasTime rdf:resource="http://www.w3.org/2006/time#t-obs-S_T_temp-1"/>
-        <sosa:observedProperty rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#T_temp"/>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">38</sosa:hasSimpleResult>
-        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</sosa:hasSimpleResult>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://semanticweb.org/STEaMINg/ContextOntology-COInd4#SitS6 -->
-
-
-    <owl:NamedIndividual rdf:about="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#SitS6">
-        <rdf:type rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#Situation-S6"/>
-        <hasCause rdf:resource="http://semanticweb.org/STEaMINg/ContextOntology-COInd4#PollutedFilters"/>
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">54</sosa:hasSimpleResult>
     </owl:NamedIndividual>
     
 
@@ -2036,15 +1606,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_C_Wtemp-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_C_Wtemp-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_C_Wtemp-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2054,15 +1616,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_C_temp-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_C_temp-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_C_temp-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2072,15 +1626,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_Conv_temp-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_Conv_temp-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_Conv_temp-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2090,15 +1636,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_E_temp-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_E_temp-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_E_temp-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2108,15 +1646,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_GB_temp-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_GB_temp-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_GB_temp-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2126,15 +1656,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_G_current-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_G_current-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_G_current-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2144,15 +1666,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_G_speed-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_G_speed-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_G_speed-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2162,15 +1676,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_G_temp-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_G_temp-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_G_temp-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2180,15 +1686,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_OilTemp-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_OilTemp-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_OilTemp-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2198,15 +1696,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_P_temp-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_P_temp-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_P_temp-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2216,15 +1706,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_PowerOutput-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_PowerOutput-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_PowerOutput-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2234,15 +1716,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_R_Pangle-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_R_Pangle-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_R_Pangle-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2252,15 +1726,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_R_speed-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_R_speed-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_R_speed-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2270,15 +1736,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_TG_temp-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_TG_temp-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_TG_temp-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 
@@ -2288,15 +1746,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_T_temp-0">
         <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.w3.org/2006/time#t-obs-S_T_temp-1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.w3.org/2006/time#t-obs-S_T_temp-1">
-        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <time:inXSDDateTimeStamp>2020-10-13T04:24:55Z</time:inXSDDateTimeStamp>
     </owl:NamedIndividual>
     
 

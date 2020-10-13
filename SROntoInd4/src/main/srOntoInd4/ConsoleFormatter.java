@@ -206,7 +206,7 @@ public class ConsoleFormatter extends ResultFormatter {
         } catch (OWLOntologyStorageException e1) {
           e1.printStackTrace();
         }
-      
+        /*
         OWLOntology inferredAxiomsOntology = null;
         try {
           inferredAxiomsOntology = manager.createOntology();
@@ -234,7 +234,7 @@ public class ConsoleFormatter extends ResultFormatter {
           // TODO Auto-generated catch block
           e.printStackTrace();
         }
-
+        */
       } // End if consistencyCheck
       else {
         System.out.println("Inconsistent input Ontology, Please check the OWL File");

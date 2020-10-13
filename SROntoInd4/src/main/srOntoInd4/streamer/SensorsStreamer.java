@@ -2,6 +2,7 @@ package srOntoInd4.streamer;
 
 import java.io.File;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.ZonedDateTime;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -72,6 +73,7 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
 		while(true){
 			try{
 				result = random.nextInt(Tmax - Tmin + 1) + Tmin;
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'");
 				Timestamp date = new Timestamp(System.currentTimeMillis());
 
 				//RdfQuadruple q = new RdfQuadruple(baseUri + "M", baseUri + "hosts", baseUri + "sensorTM", System.currentTimeMillis());
@@ -145,10 +147,9 @@ public class SensorsStreamer extends RdfStream implements Runnable  {
         // AddAxiom addAxiomobshastime = new AddAxiom(ontology, obshastime);
         // We now use the manager to apply the change
 				// manager.applyChange(addAxiomobshastime);
-
-				//OWLDataPropertyAssertionAxiom timehasdate = factory.getOWLDataPropertyAssertionAxiom(inXSDDateTimeStamp, time, date.toString());
-				//"^^http://www.w3.org/2001/XMLSchema#dateTimeStamp"
-				//ontology.add(timehasdate);
+				
+				OWLDataPropertyAssertionAxiom timehasdate = factory.getOWLDataPropertyAssertionAxiom(inXSDDateTimeStamp, time, sdf.format(date));
+				ontology.add(timehasdate);
 				// add the axiom to the ontology.
         // AddAxiom addAxiomtimehasdate = new AddAxiom(ontology, timehasdate);
         // We now use the manager to apply the change
