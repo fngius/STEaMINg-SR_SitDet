@@ -174,13 +174,13 @@ public class ConsoleFormatter extends ResultFormatter {
         // InferenceType.CLASS_ASSERTIONS, InferenceType.OBJECT_PROPERTY_HIERARCHY,
         // InferenceType.DATA_PROPERTY_HIERARCHY,
         // InferenceType.OBJECT_PROPERTY_ASSERTIONS);
-        ruleEngine_CauseDet.precomputeInferences(InferenceType.OBJECT_PROPERTY_ASSERTIONS);
+        ruleEngine_CauseDet.precomputeInferences(InferenceType.CLASS_ASSERTIONS,InferenceType.OBJECT_PROPERTY_ASSERTIONS);
 
         List<InferredAxiomGenerator<? extends OWLAxiom>> generators = new ArrayList<>();
-        // generators.add(new InferredSubClassAxiomGenerator());
-        // generators.add(new InferredClassAssertionAxiomGenerator());
+        generators.add(new InferredSubClassAxiomGenerator());
+        generators.add(new InferredClassAssertionAxiomGenerator());
         // generators.add(new InferredDataPropertyCharacteristicAxiomGenerator());
-        // generators.add(new InferredEquivalentClassAxiomGenerator());
+        generators.add(new InferredEquivalentClassAxiomGenerator());
         // generators.add(new InferredEquivalentDataPropertiesAxiomGenerator());
         // generators.add(new InferredEquivalentObjectPropertyAxiomGenerator());
         /// generators.add(new InferredInverseObjectPropertiesAxiomGenerator());

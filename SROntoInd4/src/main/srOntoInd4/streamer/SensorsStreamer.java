@@ -71,6 +71,10 @@ public class SensorsStreamer extends RdfStream implements Runnable {
 		OWLObjectProperty hasTime = factory.getOWLObjectProperty(IRI.create(ns, "hasTime"));
 		OWLDataProperty inXSDDateTimeStamp = factory.getOWLDataProperty(IRI.create(pre_TIME + "inXSDDateTimeStamp"));
 
+		/*
+		 * Stream Generator sub-module of the Translation module.
+		 */
+
 		while (true) {
 			try {
 				result = random.nextInt(Tmax - Tmin + 1) + Tmin;
@@ -101,6 +105,10 @@ public class SensorsStreamer extends RdfStream implements Runnable {
 						date + "^^http://www.w3.org/2001/XMLSchema#dateTimeStamp", System.currentTimeMillis());
 				// System.out.println(q);
 				this.put(q);
+
+				/*
+				 * Instance Creator sub-module of the Translation module.
+				 */
 
 				OWLIndividual sensor = factory.getOWLNamedIndividual(IRI.create(ns, "S_" + prop));
 				OWLClassAssertionAxiom sensorType = factory.getOWLClassAssertionAxiom(Sensor, sensor);
