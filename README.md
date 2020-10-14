@@ -1,6 +1,6 @@
 # Stream Reasoning for Abnormal Situation Detection in Industry 4.0
 
-Below is an example of the execution output on the example described [here](https://gitlab.insa-rouen.fr/fgiustozzi/STEaMINg-Onotlogy).
+Below is the output of the execution considering the case study described [here](https://gitlab.insa-rouen.fr/fgiustozzi/STEaMINg-Onotlogy).
 
 Output:
 
