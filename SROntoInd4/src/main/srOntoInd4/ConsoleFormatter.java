@@ -111,7 +111,7 @@ public class ConsoleFormatter extends ResultFormatter {
         OWLObjectProperty hasObservation = factory.getOWLObjectProperty(IRI.create(baseUri + "hasObservation"));
         for (int i = 2; i < sizeTuple; i++) {
           OWLIndividual Obs = factory.getOWLNamedIndividual(IRI.create(t.get(i)));  
-          OWLClassAssertionAxiom ObsType = factory.getOWLClassAssertionAxiom(Observation, sit);
+          OWLClassAssertionAxiom ObsType = factory.getOWLClassAssertionAxiom(Observation, Obs);
           ontology.add(ObsType);
           OWLObjectPropertyAssertionAxiom hasObsSitObs = factory.getOWLObjectPropertyAssertionAxiom(hasObservation, sit, Obs);
           ontology.add(hasObsSitObs);
