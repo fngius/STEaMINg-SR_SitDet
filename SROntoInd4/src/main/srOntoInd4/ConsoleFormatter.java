@@ -71,16 +71,14 @@ public class ConsoleFormatter extends ResultFormatter {
   private OWLOntology ontology;
   private OWLDataFactory factory;
   // private OWLOntologyManager manager;
-  private int sizeTuple;
 
   public ConsoleFormatter(String situationName, String baseUri, OWLOntology ontology, OWLDataFactory factory,
-      OWLOntologyManager manager, int sizeTuple) {
+      OWLOntologyManager manager) {
     this.situationName = situationName;
     this.baseUri = baseUri;
     this.ontology = ontology;
     this.factory = factory;
     // this.manager = manager;
-    this.sizeTuple = sizeTuple;
   }
 
   @Override
@@ -96,6 +94,7 @@ public class ConsoleFormatter extends ResultFormatter {
       String pre_SOSAOnt = "http://www.w3.org/ns/sosa/";
 
       System.out.println(situationName + " DETECTED. " + rdfTable.size() + " result at SystemTime: " + System.currentTimeMillis());
+      int sizeTuple = rdfTable.getNames().size();
       rdfTable.stream().forEach((t) -> {
         System.out.println(t.get(0) + " and " + t.get(1) + " are involved in situation " + situationName);
 

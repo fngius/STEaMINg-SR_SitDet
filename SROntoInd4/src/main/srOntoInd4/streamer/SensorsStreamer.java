@@ -108,25 +108,25 @@ public class SensorsStreamer extends RdfStream implements Runnable {
 				 * Instance Creator sub-module of the Translation module.
 				 */
 
-				OWLIndividual sensor = factory.getOWLNamedIndividual(IRI.create(ns, "S_" + prop));
-				OWLClassAssertionAxiom sensorType = factory.getOWLClassAssertionAxiom(Sensor, sensor);
-				ontology.add(sensorType);
+				OWLIndividual sensor = factory.getOWLNamedIndividual(IRI.create(pre_SOSAOnt, "S_" + prop));
+				//OWLClassAssertionAxiom sensorType = factory.getOWLClassAssertionAxiom(Sensor, sensor);
+				//ontology.add(sensorType);
 				// add the axiom to the ontology.
 				// AddAxiom addAxiomsensorType = new AddAxiom(ontology, sensorType);
 				// We now use the manager to apply the change
 				// manager.applyChange(addAxiomsensorType);
 
-				OWLIndividual obs = factory.getOWLNamedIndividual(IRI.create(ns, "S_" + prop + "-Obs-" + observationIndex));
-				OWLClassAssertionAxiom obsType = factory.getOWLClassAssertionAxiom(Observation, obs);
-				ontology.add(obsType);
+				OWLIndividual obs = factory.getOWLNamedIndividual(IRI.create(pre_SOSAOnt, "S_" + prop + "-Obs-" + observationIndex));
+				//OWLClassAssertionAxiom obsType = factory.getOWLClassAssertionAxiom(Observation, obs);
+				//ontology.add(obsType);
 				// add the axiom to the ontology.
 				// AddAxiom addAxiomobsType = new AddAxiom(ontology, obsType);
 				// We now use the manager to apply the change
 				// manager.applyChange(addAxiomobsType);
 
-				OWLIndividual property = factory.getOWLNamedIndividual(IRI.create(ns, prop));
-				OWLClassAssertionAxiom propType = factory.getOWLClassAssertionAxiom(ObservableProperty, property);
-				ontology.add(propType);
+				OWLIndividual property = factory.getOWLNamedIndividual(IRI.create(pre_SOSAOnt, prop));
+				//OWLClassAssertionAxiom propType = factory.getOWLClassAssertionAxiom(ObservableProperty, property);
+				//ontology.add(propType);
 				// add the axiom to the ontology.
 				// AddAxiom addAxiompropType = new AddAxiom(ontology, propType);
 				// We now use the manager to apply the change

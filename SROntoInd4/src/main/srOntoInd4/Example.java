@@ -561,20 +561,20 @@ public class Example {
 			 * Attach a result consumer to the query result proxy to print the results on the console
 			 * and to modify the COInd4 ontology.
 			 */
-			c_S1.addObserver(new ConsoleFormatter("S1",ns,ontology,factory,manager,6));	
-			c_S2.addObserver(new ConsoleFormatter("S2",ns,ontology,factory,manager,6));	
-			c_S3.addObserver(new ConsoleFormatter("S3",ns,ontology,factory,manager,6));	
-			c_S4.addObserver(new ConsoleFormatter("S4",ns,ontology,factory,manager,6));	
-			c_S5.addObserver(new ConsoleFormatter("S5",ns,ontology,factory,manager,6));	
-			c_S6.addObserver(new ConsoleFormatter("S6",ns,ontology,factory,manager,5));	
-			c_S7.addObserver(new ConsoleFormatter("S7",ns,ontology,factory,manager,5));	
-			c_S8.addObserver(new ConsoleFormatter("S8",ns,ontology,factory,manager,5));	
-			c_S9.addObserver(new ConsoleFormatter("S9",ns,ontology,factory,manager,5));	
-			c_S10.addObserver(new ConsoleFormatter("S10",ns,ontology,factory,manager,6));	
-			c_S11.addObserver(new ConsoleFormatter("S11",ns,ontology,factory,manager,5));	
-			c_S12.addObserver(new ConsoleFormatter("S12",ns,ontology,factory,manager,5));	
-			c_S13.addObserver(new ConsoleFormatter("S13",ns,ontology,factory,manager,5));	
-			c_S14.addObserver(new ConsoleFormatter("S14",ns,ontology,factory,manager,5));	
+			c_S1.addObserver(new ConsoleFormatter("S1",ns,ontology,factory,manager));	
+			c_S2.addObserver(new ConsoleFormatter("S2",ns,ontology,factory,manager));	
+			c_S3.addObserver(new ConsoleFormatter("S3",ns,ontology,factory,manager));	
+			c_S4.addObserver(new ConsoleFormatter("S4",ns,ontology,factory,manager));	
+			c_S5.addObserver(new ConsoleFormatter("S5",ns,ontology,factory,manager));	
+			c_S6.addObserver(new ConsoleFormatter("S6",ns,ontology,factory,manager));	
+			c_S7.addObserver(new ConsoleFormatter("S7",ns,ontology,factory,manager));	
+			c_S8.addObserver(new ConsoleFormatter("S8",ns,ontology,factory,manager));	
+			c_S9.addObserver(new ConsoleFormatter("S9",ns,ontology,factory,manager));	
+			c_S10.addObserver(new ConsoleFormatter("S10",ns,ontology,factory,manager));	
+			c_S11.addObserver(new ConsoleFormatter("S11",ns,ontology,factory,manager));	
+			c_S12.addObserver(new ConsoleFormatter("S12",ns,ontology,factory,manager));	
+			c_S13.addObserver(new ConsoleFormatter("S13",ns,ontology,factory,manager));	
+			c_S14.addObserver(new ConsoleFormatter("S14",ns,ontology,factory,manager));	
 
 			//Start data streams
 			Stream_C_Wtemp_Thread.start();
