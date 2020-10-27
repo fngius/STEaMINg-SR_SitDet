@@ -1,5 +1,15 @@
 # Stream Reasoning for Abnormal Situation Detection in Industry 4.0
 
+## Usage
+1. Clone the repo.
+
+```bash
+https://gitlab.insa-rouen.fr/fgiustozzi/STEaMINg-SR_SitDet.git
+```
+2. Import it into an IDE such as Eclipse or Visual Studio Code and install ```bash maven```.
+
+3. Make sure that the path to the ontology is the correct one (in the file Example.java).
+
 Below is the output of the execution considering the case study described [here](https://gitlab.insa-rouen.fr/fgiustozzi/STEaMINg-Onotlogy).
 
 Output:
