@@ -14,6 +14,8 @@ Below is the output of the execution considering the case study described [here]
 
 Output:
 
+![Parameters](/example.png)
+
 ```bash
 http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp http://semanticweb.org/STEaMINg/ContextOntology-COInd4#madeObservation http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_C_Wtemp-Obs-0 . (1602686482435)
 http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_TG_temp http://semanticweb.org/STEaMINg/ContextOntology-COInd4#madeObservation http://semanticweb.org/STEaMINg/ContextOntology-COInd4#S_TG_temp-Obs-0 . (1602686482443)
