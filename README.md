@@ -6,7 +6,7 @@
 ```bash
 https://gitlab.insa-rouen.fr/fgiustozzi/STEaMINg-SR_SitDet.git
 ```
-2. Import it using an IDE such as Eclipse or Visual Studio Code (maven should be installed).
+2. Import the project using an IDE such as Eclipse or Visual Studio Code (maven should be installed).
 
 3. Make sure that the path to the ontology is the correct one (Example.java).
 
