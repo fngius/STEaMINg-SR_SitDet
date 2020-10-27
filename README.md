@@ -6,9 +6,9 @@
 ```bash
 https://gitlab.insa-rouen.fr/fgiustozzi/STEaMINg-SR_SitDet.git
 ```
-2. Import it into an IDE such as Eclipse or Visual Studio Code and install ```bash maven```.
+2. Import it using an IDE such as Eclipse or Visual Studio Code (maven should be installed).
 
-3. Make sure that the path to the ontology is the correct one (in the file Example.java).
+3. Make sure that the path to the ontology is the correct one (Example.java).
 
 Below is the output of the execution considering the case study described [here](https://gitlab.insa-rouen.fr/fgiustozzi/STEaMINg-Onotlogy).
 
