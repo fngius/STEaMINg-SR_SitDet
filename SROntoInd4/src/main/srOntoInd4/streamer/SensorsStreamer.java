@@ -6,6 +6,11 @@ import java.text.SimpleDateFormat;
 import java.time.ZonedDateTime;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
+import org.knowm.xchart.QuickChart;
+import org.knowm.xchart.SwingWrapper;
+import org.knowm.xchart.XYChart;
+import org.knowm.xchart.style.Styler.LegendPosition;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.IRI;
@@ -33,9 +38,12 @@ public class SensorsStreamer extends RdfStream implements Runnable {
 	private int Tmax;
 	private OWLOntology ontology;
 	private OWLDataFactory factory;
+	private double[] dataValues;
+	private XYChart chart;
+	private SwingWrapper<XYChart> sw;
 
 	public SensorsStreamer(String iri, String baseUri, String prop, long sleepTime, int Tmin, int Tmax,
-			OWLOntology ontology, OWLDataFactory factory) {
+			OWLOntology ontology, OWLDataFactory factory, double[] dataValues, XYChart chart, SwingWrapper<XYChart> sw) {
 		super(iri);
 		this.sleepTime = sleepTime;
 		this.baseUri = baseUri;
@@ -44,6 +52,9 @@ public class SensorsStreamer extends RdfStream implements Runnable {
 		this.Tmax = Tmax;
 		this.ontology = ontology;
 		this.factory = factory;
+		this.dataValues = dataValues;
+		this.chart = chart;
+		this.sw =sw;
 	}
 
 	public void run() {
@@ -79,6 +90,32 @@ public class SensorsStreamer extends RdfStream implements Runnable {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss'Z'");
 				Timestamp date = new Timestamp(System.currentTimeMillis());
 
+				dataValues[observationIndex] = result;
+				if (observationIndex == 0) {
+					final double[][] data = getArr1(dataValues);
+					chart.updateXYSeries(prop, data[0], data[1], null);
+					sw.repaintChart();
+				}
+				else if (observationIndex == 1) {
+					final double[][] data = getArr2(dataValues);
+					chart.updateXYSeries(prop, data[0], data[1], null);
+					sw.repaintChart();
+				}
+				else if (observationIndex == 2) {
+					final double[][] data = getArr3(dataValues);
+					chart.updateXYSeries(prop, data[0], data[1], null);
+					sw.repaintChart();
+				}
+				else if (observationIndex == 3) {
+					final double[][] data = getArr4(dataValues);
+					chart.updateXYSeries(prop, data[0], data[1], null);
+					sw.repaintChart();
+				}
+				else {
+					final double[][] data = getArrX(observationIndex,dataValues);
+					chart.updateXYSeries(prop, data[0], data[1], null);
+					sw.repaintChart();
+				}
 				// RdfQuadruple q = new RdfQuadruple(baseUri + "M", baseUri + "hosts", baseUri +
 				// "sensorTM", System.currentTimeMillis());
 				// System.out.println(q);
@@ -195,6 +232,55 @@ public class SensorsStreamer extends RdfStream implements Runnable {
 			}
 		}
 
+	}
+
+	private static double[][] getArr1(double[] values) {
+		double[] xData = new double[1];
+		double[] yData = new double[1];
+		xData[0] = 0;
+		yData[0] = values[0];
+		return new double[][] { xData, yData };
+	}
+
+	private static double[][] getArr2(double[] values) {
+		double[] xData = new double[2];
+		double[] yData = new double[2];
+		for (int i = 0; i < xData.length; i++) {
+			xData[i] = i;
+			yData[i] = values[i];
+		}
+		return new double[][] { xData, yData };
+	}
+
+	private static double[][] getArr3(double[] values) {
+		double[] xData = new double[3];
+		double[] yData = new double[3];
+		for (int i = 0; i < xData.length; i++) {
+			xData[i] = i;
+			yData[i] = values[i];
+		}
+		return new double[][] { xData, yData };
+	}
+
+	private static double[][] getArr4(double[] values) {
+		double[] xData = new double[4];
+		double[] yData = new double[4];
+		for (int i = 0; i < xData.length; i++) {
+			xData[i] = i;
+			yData[i] = values[i];
+		}
+		return new double[][] { xData, yData };
+	}
+
+	private static double[][] getArrX(double phase,double[] values) {
+		double[] xData = new double[5];
+		double[] yData = new double[5];
+		for (int i = 0; i < xData.length; i++) {
+				xData[i] = phase+i-4;
+				int index=(int) (phase+i-4);
+				yData[i] = values[index];
+		}
+		return new double[][] { xData, yData };
 	}
 
 }
